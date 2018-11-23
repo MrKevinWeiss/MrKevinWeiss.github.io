@@ -1,0 +1,2953 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.5.2 on linux)" generated="20181123 14:17:40.979">
+<suite name="tests periph i2c ON nucleo-f303re" id="s1">
+<suite source="/home/kevinweiss/WorkingDirectory/RIOT/tests/periph_i2c/tests/01__periph_i2c_base.robot" name="Periph I2C Base" id="s1-s1">
+<kw library="BuiltIn" name="Run Keywords" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Reset DUT and PHILIP</arg>
+<arg>DUT Must Have Periph I2C Application</arg>
+</arguments>
+<kw library="philip.keywords" name="Reset DUT and PHILIP">
+<doc>Reset the device under test and the PHILIP tester.</doc>
+<kw library="riot_base.keywords" name="Reset Application">
+<doc>Reset the test application</doc>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:17:44.435">Slept 3 seconds</msg>
+<status endtime="20181123 14:17:44.436" starttime="20181123 14:17:41.435" status="PASS"></status>
+</kw>
+<kw library="Process" name="Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>make reset</arg>
+<arg>shell=True</arg>
+<arg>cwd=%{APPDIR}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:17:44.437">Starting process:
+make reset</msg>
+<msg level="INFO" timestamp="20181123 14:17:44.442">Waiting for process to complete.</msg>
+<msg level="INFO" timestamp="20181123 14:17:44.934">Process completed.</msg>
+<status endtime="20181123 14:17:44.935" starttime="20181123 14:17:44.436" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:17:47.938">Slept 3 seconds</msg>
+<status endtime="20181123 14:17:47.939" starttime="20181123 14:17:44.936" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:47.940" starttime="20181123 14:17:41.434" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Mcu">
+<doc>Resets the device.</doc>
+<status endtime="20181123 14:17:48.066" starttime="20181123 14:17:47.941" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Dut">
+<status endtime="20181123 14:17:50.078" starttime="20181123 14:17:48.066" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:50.079" starttime="20181123 14:17:41.433" status="PASS"></status>
+</kw>
+<kw library="periph_i2c.keywords" name="DUT Must Have Periph I2C Application">
+<kw library="api_shell.keywords" name="Repeat API Call on Timeout">
+<doc>Repeats the given API ``call`` up to 5 times on timeout.</doc>
+<arguments>
+<arg>I2C Get ID</arg>
+</arguments>
+<kw name="${i} IN RANGE [ 0 | 5 ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw library="BuiltIn" name="Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>API Call Expect</arg>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Get Id">
+<doc>Get the id of the fw.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:17:50.205" starttime="20181123 14:17:50.095" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:17:50.206">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:17:50.206" starttime="20181123 14:17:50.093" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:17:50.210">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:17:50.210" starttime="20181123 14:17:50.208" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20181123 14:17:50.213">'Success' does not contain 'Timeout'</msg>
+<status endtime="20181123 14:17:50.213" starttime="20181123 14:17:50.211" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:17:50.215" starttime="20181123 14:17:50.089" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:17:50.215" starttime="20181123 14:17:50.086" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${RESULT['result']}"!="Timeout"</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw library="BuiltIn" name="Exit For Loop">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg level="INFO" timestamp="20181123 14:17:50.218">Exiting for loop altogether.</msg>
+<status endtime="20181123 14:17:50.219" starttime="20181123 14:17:50.217" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:50.219" starttime="20181123 14:17:50.216" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:50.219" starttime="20181123 14:17:50.084" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:50.219" starttime="20181123 14:17:50.083" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>Success</arg>
+</arguments>
+<status endtime="20181123 14:17:50.221" starttime="20181123 14:17:50.220" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:50.222" starttime="20181123 14:17:50.081" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['msg']}</arg>
+<arg>periph_i2c</arg>
+</arguments>
+<status endtime="20181123 14:17:50.224" starttime="20181123 14:17:50.223" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:50.224" starttime="20181123 14:17:50.080" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:50.224" starttime="20181123 14:17:41.432" status="PASS"></status>
+</kw>
+<test name="Acquire and Release Should Succeed" id="s1-s1-t1">
+<kw library="BuiltIn" name="Run Keywords" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Reset DUT and PHILIP</arg>
+<arg>DUT Must Have Periph I2C Application</arg>
+</arguments>
+<kw library="philip.keywords" name="Reset DUT and PHILIP">
+<doc>Reset the device under test and the PHILIP tester.</doc>
+<kw library="riot_base.keywords" name="Reset Application">
+<doc>Reset the test application</doc>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:17:53.230">Slept 3 seconds</msg>
+<status endtime="20181123 14:17:53.230" starttime="20181123 14:17:50.229" status="PASS"></status>
+</kw>
+<kw library="Process" name="Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>make reset</arg>
+<arg>shell=True</arg>
+<arg>cwd=%{APPDIR}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:17:53.232">Starting process:
+make reset</msg>
+<msg level="INFO" timestamp="20181123 14:17:53.238">Waiting for process to complete.</msg>
+<msg level="INFO" timestamp="20181123 14:17:53.697">Process completed.</msg>
+<status endtime="20181123 14:17:53.697" starttime="20181123 14:17:53.231" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:17:56.698">Slept 3 seconds</msg>
+<status endtime="20181123 14:17:56.699" starttime="20181123 14:17:53.698" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:56.700" starttime="20181123 14:17:50.228" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Mcu">
+<doc>Resets the device.</doc>
+<status endtime="20181123 14:17:56.722" starttime="20181123 14:17:56.700" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Dut">
+<status endtime="20181123 14:17:58.735" starttime="20181123 14:17:56.723" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:58.735" starttime="20181123 14:17:50.228" status="PASS"></status>
+</kw>
+<kw library="periph_i2c.keywords" name="DUT Must Have Periph I2C Application">
+<kw library="api_shell.keywords" name="Repeat API Call on Timeout">
+<doc>Repeats the given API ``call`` up to 5 times on timeout.</doc>
+<arguments>
+<arg>I2C Get ID</arg>
+</arguments>
+<kw name="${i} IN RANGE [ 0 | 5 ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw library="BuiltIn" name="Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>API Call Expect</arg>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Get Id">
+<doc>Get the id of the fw.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:17:58.771" starttime="20181123 14:17:58.763" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:17:58.772">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:17:58.772" starttime="20181123 14:17:58.761" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:17:58.775">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:17:58.775" starttime="20181123 14:17:58.773" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20181123 14:17:58.778">'Success' does not contain 'Timeout'</msg>
+<status endtime="20181123 14:17:58.779" starttime="20181123 14:17:58.776" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:17:58.779" starttime="20181123 14:17:58.757" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:17:58.780" starttime="20181123 14:17:58.754" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${RESULT['result']}"!="Timeout"</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw library="BuiltIn" name="Exit For Loop">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg level="INFO" timestamp="20181123 14:17:58.783">Exiting for loop altogether.</msg>
+<status endtime="20181123 14:17:58.783" starttime="20181123 14:17:58.782" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:58.783" starttime="20181123 14:17:58.780" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:58.783" starttime="20181123 14:17:58.752" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:58.784" starttime="20181123 14:17:58.751" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>Success</arg>
+</arguments>
+<status endtime="20181123 14:17:58.786" starttime="20181123 14:17:58.784" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:58.787" starttime="20181123 14:17:58.739" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['msg']}</arg>
+<arg>periph_i2c</arg>
+</arguments>
+<status endtime="20181123 14:17:58.790" starttime="20181123 14:17:58.788" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:58.791" starttime="20181123 14:17:58.736" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:58.791" starttime="20181123 14:17:50.227" status="PASS"></status>
+</kw>
+<kw library="api_shell.keywords" name="API Call Should Succeed">
+<doc>Fails if the given API ``call`` does not succeed.</doc>
+<arguments>
+<arg>I2C Acquire</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Success</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Acquire">
+<doc>Get access to the I2C bus.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:17:58.810" starttime="20181123 14:17:58.800" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:17:58.810">${RESULT} = {'msg': 'i2c_0 acquired', 'result': 'Success', 'data': None, 'cmd': 'i2c_acquire(0)'}</msg>
+<status endtime="20181123 14:17:58.810" starttime="20181123 14:17:58.798" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:17:58.811">${RESULT} = {'msg': 'i2c_0 acquired', 'result': 'Success', 'data': None, 'cmd': 'i2c_acquire(0)'}</msg>
+<status endtime="20181123 14:17:58.811" starttime="20181123 14:17:58.811" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<status endtime="20181123 14:17:58.812" starttime="20181123 14:17:58.812" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:58.812" starttime="20181123 14:17:58.795" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:58.813" starttime="20181123 14:17:58.793" status="PASS"></status>
+</kw>
+<kw library="api_shell.keywords" name="API Call Should Succeed">
+<doc>Fails if the given API ``call`` does not succeed.</doc>
+<arguments>
+<arg>I2C Release</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Success</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Release">
+<doc>Release to the I2C bus.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:17:58.824" starttime="20181123 14:17:58.815" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:17:58.825">${RESULT} = {'msg': 'i2c_0 released', 'result': 'Success', 'data': None, 'cmd': 'i2c_release(0)'}</msg>
+<status endtime="20181123 14:17:58.825" starttime="20181123 14:17:58.815" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:17:58.826">${RESULT} = {'msg': 'i2c_0 released', 'result': 'Success', 'data': None, 'cmd': 'i2c_release(0)'}</msg>
+<status endtime="20181123 14:17:58.826" starttime="20181123 14:17:58.825" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<status endtime="20181123 14:17:58.827" starttime="20181123 14:17:58.826" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:58.827" starttime="20181123 14:17:58.814" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:17:58.827" starttime="20181123 14:17:58.813" status="PASS"></status>
+</kw>
+<doc>Verify I2C acquire and release API calls.</doc>
+<tags>
+<tag>APP = tests_periph_i2c</tag>
+<tag>BOARD = nucleo-f303re</tag>
+<tag>i2c</tag>
+<tag>periph</tag>
+</tags>
+<status endtime="20181123 14:17:58.827" starttime="20181123 14:17:50.225" status="PASS" critical="yes"></status>
+</test>
+<test name="Acquire after Release Should Succeed" id="s1-s1-t2">
+<kw library="BuiltIn" name="Run Keywords" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Reset DUT and PHILIP</arg>
+<arg>DUT Must Have Periph I2C Application</arg>
+</arguments>
+<kw library="philip.keywords" name="Reset DUT and PHILIP">
+<doc>Reset the device under test and the PHILIP tester.</doc>
+<kw library="riot_base.keywords" name="Reset Application">
+<doc>Reset the test application</doc>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:01.832">Slept 3 seconds</msg>
+<status endtime="20181123 14:18:01.832" starttime="20181123 14:17:58.831" status="PASS"></status>
+</kw>
+<kw library="Process" name="Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>make reset</arg>
+<arg>shell=True</arg>
+<arg>cwd=%{APPDIR}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:01.833">Starting process:
+make reset</msg>
+<msg level="INFO" timestamp="20181123 14:18:01.835">Waiting for process to complete.</msg>
+<msg level="INFO" timestamp="20181123 14:18:02.179">Process completed.</msg>
+<status endtime="20181123 14:18:02.179" starttime="20181123 14:18:01.832" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:05.180">Slept 3 seconds</msg>
+<status endtime="20181123 14:18:05.181" starttime="20181123 14:18:02.180" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:05.181" starttime="20181123 14:17:58.831" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Mcu">
+<doc>Resets the device.</doc>
+<status endtime="20181123 14:18:05.202" starttime="20181123 14:18:05.181" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Dut">
+<status endtime="20181123 14:18:07.211" starttime="20181123 14:18:05.202" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:07.211" starttime="20181123 14:17:58.830" status="PASS"></status>
+</kw>
+<kw library="periph_i2c.keywords" name="DUT Must Have Periph I2C Application">
+<kw library="api_shell.keywords" name="Repeat API Call on Timeout">
+<doc>Repeats the given API ``call`` up to 5 times on timeout.</doc>
+<arguments>
+<arg>I2C Get ID</arg>
+</arguments>
+<kw name="${i} IN RANGE [ 0 | 5 ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw library="BuiltIn" name="Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>API Call Expect</arg>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Get Id">
+<doc>Get the id of the fw.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:18:07.222" starttime="20181123 14:18:07.216" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:18:07.222">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:18:07.222" starttime="20181123 14:18:07.216" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:07.223">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:18:07.223" starttime="20181123 14:18:07.222" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20181123 14:18:07.223">'Success' does not contain 'Timeout'</msg>
+<status endtime="20181123 14:18:07.223" starttime="20181123 14:18:07.223" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:18:07.224" starttime="20181123 14:18:07.215" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:18:07.224" starttime="20181123 14:18:07.213" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${RESULT['result']}"!="Timeout"</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw library="BuiltIn" name="Exit For Loop">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg level="INFO" timestamp="20181123 14:18:07.224">Exiting for loop altogether.</msg>
+<status endtime="20181123 14:18:07.225" starttime="20181123 14:18:07.224" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:07.225" starttime="20181123 14:18:07.224" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:07.225" starttime="20181123 14:18:07.213" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:07.225" starttime="20181123 14:18:07.213" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>Success</arg>
+</arguments>
+<status endtime="20181123 14:18:07.225" starttime="20181123 14:18:07.225" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:07.225" starttime="20181123 14:18:07.212" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['msg']}</arg>
+<arg>periph_i2c</arg>
+</arguments>
+<status endtime="20181123 14:18:07.226" starttime="20181123 14:18:07.225" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:07.226" starttime="20181123 14:18:07.211" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:07.226" starttime="20181123 14:17:58.829" status="PASS"></status>
+</kw>
+<kw library="api_shell.keywords" name="API Call Should Succeed">
+<doc>Fails if the given API ``call`` does not succeed.</doc>
+<arguments>
+<arg>I2C Acquire</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Success</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Acquire">
+<doc>Get access to the I2C bus.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:18:07.240" starttime="20181123 14:18:07.231" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:18:07.240">${RESULT} = {'msg': 'i2c_0 acquired', 'result': 'Success', 'data': None, 'cmd': 'i2c_acquire(0)'}</msg>
+<status endtime="20181123 14:18:07.240" starttime="20181123 14:18:07.231" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:07.241">${RESULT} = {'msg': 'i2c_0 acquired', 'result': 'Success', 'data': None, 'cmd': 'i2c_acquire(0)'}</msg>
+<status endtime="20181123 14:18:07.241" starttime="20181123 14:18:07.240" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<status endtime="20181123 14:18:07.242" starttime="20181123 14:18:07.241" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:07.242" starttime="20181123 14:18:07.227" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:07.242" starttime="20181123 14:18:07.226" status="PASS"></status>
+</kw>
+<kw library="api_shell.keywords" name="API Call Should Succeed">
+<doc>Fails if the given API ``call`` does not succeed.</doc>
+<arguments>
+<arg>I2C Release</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Success</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Release">
+<doc>Release to the I2C bus.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:18:07.254" starttime="20181123 14:18:07.246" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:18:07.254">${RESULT} = {'msg': 'i2c_0 released', 'result': 'Success', 'data': None, 'cmd': 'i2c_release(0)'}</msg>
+<status endtime="20181123 14:18:07.254" starttime="20181123 14:18:07.245" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:07.255">${RESULT} = {'msg': 'i2c_0 released', 'result': 'Success', 'data': None, 'cmd': 'i2c_release(0)'}</msg>
+<status endtime="20181123 14:18:07.255" starttime="20181123 14:18:07.254" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<status endtime="20181123 14:18:07.256" starttime="20181123 14:18:07.255" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:07.256" starttime="20181123 14:18:07.243" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:07.256" starttime="20181123 14:18:07.242" status="PASS"></status>
+</kw>
+<kw library="api_shell.keywords" name="API Call Should Succeed">
+<doc>Fails if the given API ``call`` does not succeed.</doc>
+<arguments>
+<arg>I2C Acquire</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Success</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Acquire">
+<doc>Get access to the I2C bus.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:18:07.269" starttime="20181123 14:18:07.260" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:18:07.269">${RESULT} = {'msg': 'i2c_0 acquired', 'result': 'Success', 'data': None, 'cmd': 'i2c_acquire(0)'}</msg>
+<status endtime="20181123 14:18:07.269" starttime="20181123 14:18:07.258" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:07.270">${RESULT} = {'msg': 'i2c_0 acquired', 'result': 'Success', 'data': None, 'cmd': 'i2c_acquire(0)'}</msg>
+<status endtime="20181123 14:18:07.270" starttime="20181123 14:18:07.270" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<status endtime="20181123 14:18:07.271" starttime="20181123 14:18:07.271" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:07.271" starttime="20181123 14:18:07.257" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:07.271" starttime="20181123 14:18:07.257" status="PASS"></status>
+</kw>
+<doc>Verify acquiring an I2C bus after release.</doc>
+<tags>
+<tag>APP = tests_periph_i2c</tag>
+<tag>BOARD = nucleo-f303re</tag>
+<tag>i2c</tag>
+<tag>periph</tag>
+</tags>
+<status endtime="20181123 14:18:07.272" starttime="20181123 14:17:58.828" status="PASS" critical="yes"></status>
+</test>
+<test name="Double Acquire Should Timeout" id="s1-s1-t3">
+<kw library="BuiltIn" name="Run Keywords" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Reset DUT and PHILIP</arg>
+<arg>DUT Must Have Periph I2C Application</arg>
+</arguments>
+<kw library="philip.keywords" name="Reset DUT and PHILIP">
+<doc>Reset the device under test and the PHILIP tester.</doc>
+<kw library="riot_base.keywords" name="Reset Application">
+<doc>Reset the test application</doc>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:10.275">Slept 3 seconds</msg>
+<status endtime="20181123 14:18:10.275" starttime="20181123 14:18:07.274" status="PASS"></status>
+</kw>
+<kw library="Process" name="Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>make reset</arg>
+<arg>shell=True</arg>
+<arg>cwd=%{APPDIR}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:10.276">Starting process:
+make reset</msg>
+<msg level="INFO" timestamp="20181123 14:18:10.279">Waiting for process to complete.</msg>
+<msg level="INFO" timestamp="20181123 14:18:10.762">Process completed.</msg>
+<status endtime="20181123 14:18:10.762" starttime="20181123 14:18:10.276" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:13.763">Slept 3 seconds</msg>
+<status endtime="20181123 14:18:13.764" starttime="20181123 14:18:10.763" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:13.764" starttime="20181123 14:18:07.274" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Mcu">
+<doc>Resets the device.</doc>
+<status endtime="20181123 14:18:13.785" starttime="20181123 14:18:13.764" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Dut">
+<status endtime="20181123 14:18:15.795" starttime="20181123 14:18:13.785" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:15.795" starttime="20181123 14:18:07.273" status="PASS"></status>
+</kw>
+<kw library="periph_i2c.keywords" name="DUT Must Have Periph I2C Application">
+<kw library="api_shell.keywords" name="Repeat API Call on Timeout">
+<doc>Repeats the given API ``call`` up to 5 times on timeout.</doc>
+<arguments>
+<arg>I2C Get ID</arg>
+</arguments>
+<kw name="${i} IN RANGE [ 0 | 5 ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw library="BuiltIn" name="Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>API Call Expect</arg>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Get Id">
+<doc>Get the id of the fw.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:18:15.804" starttime="20181123 14:18:15.799" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:18:15.804">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:18:15.804" starttime="20181123 14:18:15.798" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:15.805">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:18:15.805" starttime="20181123 14:18:15.804" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20181123 14:18:15.805">'Success' does not contain 'Timeout'</msg>
+<status endtime="20181123 14:18:15.805" starttime="20181123 14:18:15.805" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:18:15.806" starttime="20181123 14:18:15.798" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:18:15.806" starttime="20181123 14:18:15.796" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${RESULT['result']}"!="Timeout"</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw library="BuiltIn" name="Exit For Loop">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg level="INFO" timestamp="20181123 14:18:15.806">Exiting for loop altogether.</msg>
+<status endtime="20181123 14:18:15.807" starttime="20181123 14:18:15.806" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:15.807" starttime="20181123 14:18:15.806" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:15.807" starttime="20181123 14:18:15.796" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:15.807" starttime="20181123 14:18:15.796" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>Success</arg>
+</arguments>
+<status endtime="20181123 14:18:15.807" starttime="20181123 14:18:15.807" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:15.807" starttime="20181123 14:18:15.796" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['msg']}</arg>
+<arg>periph_i2c</arg>
+</arguments>
+<status endtime="20181123 14:18:15.807" starttime="20181123 14:18:15.807" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:15.808" starttime="20181123 14:18:15.795" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:15.808" starttime="20181123 14:18:07.273" status="PASS"></status>
+</kw>
+<kw library="api_shell.keywords" name="API Call Should Succeed">
+<doc>Fails if the given API ``call`` does not succeed.</doc>
+<arguments>
+<arg>I2C Acquire</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Success</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Acquire">
+<doc>Get access to the I2C bus.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:18:15.817" starttime="20181123 14:18:15.809" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:18:15.817">${RESULT} = {'msg': 'i2c_0 acquired', 'result': 'Success', 'data': None, 'cmd': 'i2c_acquire(0)'}</msg>
+<status endtime="20181123 14:18:15.817" starttime="20181123 14:18:15.809" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:15.820">${RESULT} = {'msg': 'i2c_0 acquired', 'result': 'Success', 'data': None, 'cmd': 'i2c_acquire(0)'}</msg>
+<status endtime="20181123 14:18:15.820" starttime="20181123 14:18:15.817" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<status endtime="20181123 14:18:15.821" starttime="20181123 14:18:15.820" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:15.822" starttime="20181123 14:18:15.808" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:15.822" starttime="20181123 14:18:15.808" status="PASS"></status>
+</kw>
+<kw library="api_shell.keywords" name="API Call Should Timeout">
+<doc>Fails if the given API ``call`` does not timeout.</doc>
+<arguments>
+<arg>I2C Acquire</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Acquire">
+<doc>Get access to the I2C bus.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:18:25.871" starttime="20181123 14:18:15.826" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:18:25.871">${RESULT} = {'msg': 'i2c_acquire(0)\n', 'result': 'Timeout', 'data': None, 'cmd': 'i2c_acquire(0)'}</msg>
+<status endtime="20181123 14:18:25.871" starttime="20181123 14:18:15.825" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:25.872">${RESULT} = {'msg': 'i2c_acquire(0)\n', 'result': 'Timeout', 'data': None, 'cmd': 'i2c_acquire(0)'}</msg>
+<status endtime="20181123 14:18:25.872" starttime="20181123 14:18:25.871" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<status endtime="20181123 14:18:25.873" starttime="20181123 14:18:25.873" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:25.874" starttime="20181123 14:18:15.823" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:25.874" starttime="20181123 14:18:15.823" status="PASS"></status>
+</kw>
+<doc>Verify that acquiring a locked I2C bus blocks the thread.</doc>
+<tags>
+<tag>APP = tests_periph_i2c</tag>
+<tag>BOARD = nucleo-f303re</tag>
+<tag>i2c</tag>
+<tag>periph</tag>
+</tags>
+<status endtime="20181123 14:18:25.874" starttime="20181123 14:18:07.272" status="PASS" critical="yes"></status>
+</test>
+<test name="Unacquired Read Register Should Succeed" id="s1-s1-t4">
+<kw library="BuiltIn" name="Run Keywords" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Reset DUT and PHILIP</arg>
+<arg>DUT Must Have Periph I2C Application</arg>
+</arguments>
+<kw library="philip.keywords" name="Reset DUT and PHILIP">
+<doc>Reset the device under test and the PHILIP tester.</doc>
+<kw library="riot_base.keywords" name="Reset Application">
+<doc>Reset the test application</doc>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:28.880">Slept 3 seconds</msg>
+<status endtime="20181123 14:18:28.880" starttime="20181123 14:18:25.879" status="PASS"></status>
+</kw>
+<kw library="Process" name="Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>make reset</arg>
+<arg>shell=True</arg>
+<arg>cwd=%{APPDIR}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:28.881">Starting process:
+make reset</msg>
+<msg level="INFO" timestamp="20181123 14:18:28.887">Waiting for process to complete.</msg>
+<msg level="INFO" timestamp="20181123 14:18:29.469">Process completed.</msg>
+<status endtime="20181123 14:18:29.469" starttime="20181123 14:18:28.881" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:32.472">Slept 3 seconds</msg>
+<status endtime="20181123 14:18:32.472" starttime="20181123 14:18:29.470" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:32.473" starttime="20181123 14:18:25.879" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Mcu">
+<doc>Resets the device.</doc>
+<status endtime="20181123 14:18:32.495" starttime="20181123 14:18:32.474" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Dut">
+<status endtime="20181123 14:18:34.505" starttime="20181123 14:18:32.496" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:34.506" starttime="20181123 14:18:25.878" status="PASS"></status>
+</kw>
+<kw library="periph_i2c.keywords" name="DUT Must Have Periph I2C Application">
+<kw library="api_shell.keywords" name="Repeat API Call on Timeout">
+<doc>Repeats the given API ``call`` up to 5 times on timeout.</doc>
+<arguments>
+<arg>I2C Get ID</arg>
+</arguments>
+<kw name="${i} IN RANGE [ 0 | 5 ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw library="BuiltIn" name="Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>API Call Expect</arg>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Get Id">
+<doc>Get the id of the fw.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:18:34.519" starttime="20181123 14:18:34.514" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:18:34.520">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:18:34.520" starttime="20181123 14:18:34.513" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:34.522">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:18:34.522" starttime="20181123 14:18:34.520" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20181123 14:18:34.524">'Success' does not contain 'Timeout'</msg>
+<status endtime="20181123 14:18:34.524" starttime="20181123 14:18:34.522" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:18:34.525" starttime="20181123 14:18:34.511" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:18:34.525" starttime="20181123 14:18:34.510" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${RESULT['result']}"!="Timeout"</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw library="BuiltIn" name="Exit For Loop">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg level="INFO" timestamp="20181123 14:18:34.528">Exiting for loop altogether.</msg>
+<status endtime="20181123 14:18:34.528" starttime="20181123 14:18:34.528" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:34.528" starttime="20181123 14:18:34.526" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:34.528" starttime="20181123 14:18:34.509" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:34.529" starttime="20181123 14:18:34.509" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>Success</arg>
+</arguments>
+<status endtime="20181123 14:18:34.530" starttime="20181123 14:18:34.529" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:34.530" starttime="20181123 14:18:34.508" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['msg']}</arg>
+<arg>periph_i2c</arg>
+</arguments>
+<status endtime="20181123 14:18:34.532" starttime="20181123 14:18:34.531" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:34.532" starttime="20181123 14:18:34.506" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:34.532" starttime="20181123 14:18:25.876" status="PASS"></status>
+</kw>
+<kw library="api_shell.keywords" name="API Call Should Succeed">
+<doc>Fails if the given API ``call`` does not succeed.</doc>
+<arguments>
+<arg>I2C Read Reg</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Success</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Read Reg">
+<doc>Read byte from register.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:18:34.554" starttime="20181123 14:18:34.539" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:18:34.554">${RESULT} = {'msg': 'i2c_0 read 1 byte(s) from reg 0x98 : [0x00]', 'result': 'Success', 'data': [0], 'cmd': 'i2c_read_reg(0, 0x55, 0x98, 0x00)'}</msg>
+<status endtime="20181123 14:18:34.554" starttime="20181123 14:18:34.538" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:34.556">${RESULT} = {'msg': 'i2c_0 read 1 byte(s) from reg 0x98 : [0x00]', 'result': 'Success', 'data': [0], 'cmd': 'i2c_read_reg(0, 0x55, 0x98, 0x00)'}</msg>
+<status endtime="20181123 14:18:34.556" starttime="20181123 14:18:34.555" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<status endtime="20181123 14:18:34.557" starttime="20181123 14:18:34.556" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:34.558" starttime="20181123 14:18:34.535" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:34.558" starttime="20181123 14:18:34.533" status="PASS"></status>
+</kw>
+<doc>Verfiy reading a register without acquiring the I2C bus.</doc>
+<tags>
+<tag>APP = tests_periph_i2c</tag>
+<tag>BOARD = nucleo-f303re</tag>
+<tag>i2c</tag>
+<tag>periph</tag>
+</tags>
+<status endtime="20181123 14:18:34.558" starttime="20181123 14:18:25.875" status="PASS" critical="yes"></status>
+</test>
+<test name="Read Register After Release Should Error" id="s1-s1-t5">
+<kw library="BuiltIn" name="Run Keywords" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Reset DUT and PHILIP</arg>
+<arg>DUT Must Have Periph I2C Application</arg>
+</arguments>
+<kw library="philip.keywords" name="Reset DUT and PHILIP">
+<doc>Reset the device under test and the PHILIP tester.</doc>
+<kw library="riot_base.keywords" name="Reset Application">
+<doc>Reset the test application</doc>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:37.566">Slept 3 seconds</msg>
+<status endtime="20181123 14:18:37.566" starttime="20181123 14:18:34.565" status="PASS"></status>
+</kw>
+<kw library="Process" name="Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>make reset</arg>
+<arg>shell=True</arg>
+<arg>cwd=%{APPDIR}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:37.568">Starting process:
+make reset</msg>
+<msg level="INFO" timestamp="20181123 14:18:37.576">Waiting for process to complete.</msg>
+<msg level="INFO" timestamp="20181123 14:18:38.032">Process completed.</msg>
+<status endtime="20181123 14:18:38.032" starttime="20181123 14:18:37.567" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:41.033">Slept 3 seconds</msg>
+<status endtime="20181123 14:18:41.033" starttime="20181123 14:18:38.032" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:41.034" starttime="20181123 14:18:34.563" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Mcu">
+<doc>Resets the device.</doc>
+<status endtime="20181123 14:18:41.055" starttime="20181123 14:18:41.034" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Dut">
+<status endtime="20181123 14:18:43.064" starttime="20181123 14:18:41.055" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:43.065" starttime="20181123 14:18:34.562" status="PASS"></status>
+</kw>
+<kw library="periph_i2c.keywords" name="DUT Must Have Periph I2C Application">
+<kw library="api_shell.keywords" name="Repeat API Call on Timeout">
+<doc>Repeats the given API ``call`` up to 5 times on timeout.</doc>
+<arguments>
+<arg>I2C Get ID</arg>
+</arguments>
+<kw name="${i} IN RANGE [ 0 | 5 ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw library="BuiltIn" name="Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>API Call Expect</arg>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Get Id">
+<doc>Get the id of the fw.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:18:43.075" starttime="20181123 14:18:43.069" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:18:43.076">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:18:43.076" starttime="20181123 14:18:43.069" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:43.077">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:18:43.077" starttime="20181123 14:18:43.076" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20181123 14:18:43.078">'Success' does not contain 'Timeout'</msg>
+<status endtime="20181123 14:18:43.078" starttime="20181123 14:18:43.077" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:18:43.079" starttime="20181123 14:18:43.068" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:18:43.079" starttime="20181123 14:18:43.067" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${RESULT['result']}"!="Timeout"</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw library="BuiltIn" name="Exit For Loop">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg level="INFO" timestamp="20181123 14:18:43.082">Exiting for loop altogether.</msg>
+<status endtime="20181123 14:18:43.082" starttime="20181123 14:18:43.081" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:43.082" starttime="20181123 14:18:43.079" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:43.082" starttime="20181123 14:18:43.067" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:43.082" starttime="20181123 14:18:43.066" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>Success</arg>
+</arguments>
+<status endtime="20181123 14:18:43.083" starttime="20181123 14:18:43.083" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:43.083" starttime="20181123 14:18:43.066" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['msg']}</arg>
+<arg>periph_i2c</arg>
+</arguments>
+<status endtime="20181123 14:18:43.084" starttime="20181123 14:18:43.084" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:43.084" starttime="20181123 14:18:43.065" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:43.085" starttime="20181123 14:18:34.562" status="PASS"></status>
+</kw>
+<kw library="api_shell.keywords" name="API Call Should Succeed">
+<doc>Fails if the given API ``call`` does not succeed.</doc>
+<arguments>
+<arg>I2C Acquire</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Success</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Acquire">
+<doc>Get access to the I2C bus.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:18:43.097" starttime="20181123 14:18:43.087" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:18:43.097">${RESULT} = {'msg': 'i2c_0 acquired', 'result': 'Success', 'data': None, 'cmd': 'i2c_acquire(0)'}</msg>
+<status endtime="20181123 14:18:43.098" starttime="20181123 14:18:43.087" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:43.099">${RESULT} = {'msg': 'i2c_0 acquired', 'result': 'Success', 'data': None, 'cmd': 'i2c_acquire(0)'}</msg>
+<status endtime="20181123 14:18:43.100" starttime="20181123 14:18:43.099" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<status endtime="20181123 14:18:43.100" starttime="20181123 14:18:43.100" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:43.100" starttime="20181123 14:18:43.086" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:43.101" starttime="20181123 14:18:43.085" status="PASS"></status>
+</kw>
+<kw library="api_shell.keywords" name="API Call Should Succeed">
+<doc>Fails if the given API ``call`` does not succeed.</doc>
+<arguments>
+<arg>I2C Release</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Success</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Release">
+<doc>Release to the I2C bus.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:18:43.111" starttime="20181123 14:18:43.102" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:18:43.111">${RESULT} = {'msg': 'i2c_0 released', 'result': 'Success', 'data': None, 'cmd': 'i2c_release(0)'}</msg>
+<status endtime="20181123 14:18:43.111" starttime="20181123 14:18:43.102" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:43.113">${RESULT} = {'msg': 'i2c_0 released', 'result': 'Success', 'data': None, 'cmd': 'i2c_release(0)'}</msg>
+<status endtime="20181123 14:18:43.113" starttime="20181123 14:18:43.113" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<status endtime="20181123 14:18:43.114" starttime="20181123 14:18:43.113" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:43.114" starttime="20181123 14:18:43.101" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:43.114" starttime="20181123 14:18:43.101" status="PASS"></status>
+</kw>
+<kw library="api_shell.keywords" name="API Call Should Error">
+<doc>Fails if the given API ``call`` does not fail.</doc>
+<arguments>
+<arg>I2C Read Reg</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Error</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Read Reg">
+<doc>Read byte from register.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:18:43.190" starttime="20181123 14:18:43.117" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:18:43.190">${RESULT} = {'msg': 'ENXIO [6]', 'result': 'Error', 'data': None, 'cmd': 'i2c_read_reg(0, 0x55, 0x98, 0x00)'}</msg>
+<status endtime="20181123 14:18:43.190" starttime="20181123 14:18:43.117" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:43.191">${RESULT} = {'msg': 'ENXIO [6]', 'result': 'Error', 'data': None, 'cmd': 'i2c_read_reg(0, 0x55, 0x98, 0x00)'}</msg>
+<status endtime="20181123 14:18:43.192" starttime="20181123 14:18:43.190" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<status endtime="20181123 14:18:43.192" starttime="20181123 14:18:43.192" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:43.193" starttime="20181123 14:18:43.116" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:43.193" starttime="20181123 14:18:43.115" status="PASS"></status>
+</kw>
+<doc>Verfiy reading a register doesn't work after releasing the I2C bus.</doc>
+<tags>
+<tag>APP = tests_periph_i2c</tag>
+<tag>BOARD = nucleo-f303re</tag>
+<tag>i2c</tag>
+<tag>periph</tag>
+</tags>
+<status endtime="20181123 14:18:43.193" starttime="20181123 14:18:34.560" status="PASS" critical="yes"></status>
+</test>
+<test name="Read Register After NACK Should Succeed" id="s1-s1-t6">
+<kw library="BuiltIn" name="Run Keywords" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Reset DUT and PHILIP</arg>
+<arg>DUT Must Have Periph I2C Application</arg>
+</arguments>
+<kw library="philip.keywords" name="Reset DUT and PHILIP">
+<doc>Reset the device under test and the PHILIP tester.</doc>
+<kw library="riot_base.keywords" name="Reset Application">
+<doc>Reset the test application</doc>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:46.196">Slept 3 seconds</msg>
+<status endtime="20181123 14:18:46.196" starttime="20181123 14:18:43.196" status="PASS"></status>
+</kw>
+<kw library="Process" name="Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>make reset</arg>
+<arg>shell=True</arg>
+<arg>cwd=%{APPDIR}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:46.198">Starting process:
+make reset</msg>
+<msg level="INFO" timestamp="20181123 14:18:46.202">Waiting for process to complete.</msg>
+<msg level="INFO" timestamp="20181123 14:18:46.590">Process completed.</msg>
+<status endtime="20181123 14:18:46.591" starttime="20181123 14:18:46.197" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:49.592">Slept 3 seconds</msg>
+<status endtime="20181123 14:18:49.592" starttime="20181123 14:18:46.591" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:49.593" starttime="20181123 14:18:43.195" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Mcu">
+<doc>Resets the device.</doc>
+<status endtime="20181123 14:18:49.615" starttime="20181123 14:18:49.593" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Dut">
+<status endtime="20181123 14:18:51.624" starttime="20181123 14:18:49.615" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:51.624" starttime="20181123 14:18:43.195" status="PASS"></status>
+</kw>
+<kw library="periph_i2c.keywords" name="DUT Must Have Periph I2C Application">
+<kw library="api_shell.keywords" name="Repeat API Call on Timeout">
+<doc>Repeats the given API ``call`` up to 5 times on timeout.</doc>
+<arguments>
+<arg>I2C Get ID</arg>
+</arguments>
+<kw name="${i} IN RANGE [ 0 | 5 ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw library="BuiltIn" name="Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>API Call Expect</arg>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Get Id">
+<doc>Get the id of the fw.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:18:51.636" starttime="20181123 14:18:51.630" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:18:51.636">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:18:51.636" starttime="20181123 14:18:51.630" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:51.637">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:18:51.637" starttime="20181123 14:18:51.636" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20181123 14:18:51.637">'Success' does not contain 'Timeout'</msg>
+<status endtime="20181123 14:18:51.637" starttime="20181123 14:18:51.637" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:18:51.638" starttime="20181123 14:18:51.629" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:18:51.638" starttime="20181123 14:18:51.628" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${RESULT['result']}"!="Timeout"</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw library="BuiltIn" name="Exit For Loop">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg level="INFO" timestamp="20181123 14:18:51.639">Exiting for loop altogether.</msg>
+<status endtime="20181123 14:18:51.639" starttime="20181123 14:18:51.639" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:51.639" starttime="20181123 14:18:51.638" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:51.639" starttime="20181123 14:18:51.628" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:51.639" starttime="20181123 14:18:51.628" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>Success</arg>
+</arguments>
+<status endtime="20181123 14:18:51.640" starttime="20181123 14:18:51.639" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:51.640" starttime="20181123 14:18:51.627" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['msg']}</arg>
+<arg>periph_i2c</arg>
+</arguments>
+<status endtime="20181123 14:18:51.640" starttime="20181123 14:18:51.640" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:51.641" starttime="20181123 14:18:51.625" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:51.641" starttime="20181123 14:18:43.194" status="PASS"></status>
+</kw>
+<kw library="api_shell.keywords" name="API Call Should Error">
+<doc>Fails if the given API ``call`` does not fail.</doc>
+<arguments>
+<arg>I2C Read Reg</arg>
+<arg>addr=42</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Error</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Read Reg">
+<doc>Read byte from register.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:18:51.671" starttime="20181123 14:18:51.645" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:18:51.671">${RESULT} = {'msg': 'ENXIO [6]', 'result': 'Error', 'data': None, 'cmd': 'i2c_read_reg(0, 0x2a, 0x98, 0x00)'}</msg>
+<status endtime="20181123 14:18:51.671" starttime="20181123 14:18:51.644" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:51.672">${RESULT} = {'msg': 'ENXIO [6]', 'result': 'Error', 'data': None, 'cmd': 'i2c_read_reg(0, 0x2a, 0x98, 0x00)'}</msg>
+<status endtime="20181123 14:18:51.672" starttime="20181123 14:18:51.671" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<status endtime="20181123 14:18:51.673" starttime="20181123 14:18:51.672" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:51.673" starttime="20181123 14:18:51.643" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:51.673" starttime="20181123 14:18:51.641" status="PASS"></status>
+</kw>
+<kw library="api_shell.keywords" name="API Call Should Succeed">
+<doc>Fails if the given API ``call`` does not succeed.</doc>
+<arguments>
+<arg>I2C Read Reg</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Success</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Read Reg">
+<doc>Read byte from register.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:18:51.688" starttime="20181123 14:18:51.677" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:18:51.688">${RESULT} = {'msg': 'ETIMEDOUT [116]', 'result': 'Error', 'data': None, 'cmd': 'i2c_read_reg(0, 0x55, 0x98, 0x00)'}</msg>
+<status endtime="20181123 14:18:51.688" starttime="20181123 14:18:51.675" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:51.689">${RESULT} = {'msg': 'ETIMEDOUT [116]', 'result': 'Error', 'data': None, 'cmd': 'i2c_read_reg(0, 0x55, 0x98, 0x00)'}</msg>
+<status endtime="20181123 14:18:51.689" starttime="20181123 14:18:51.688" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20181123 14:18:51.690">'Error' does not contain 'Success'</msg>
+<status endtime="20181123 14:18:51.690" starttime="20181123 14:18:51.689" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:18:51.690" starttime="20181123 14:18:51.674" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:18:51.690" starttime="20181123 14:18:51.673" status="FAIL"></status>
+</kw>
+<doc>Verify recovery of I2C bus after NACK.</doc>
+<tags>
+<tag>APP = tests_periph_i2c</tag>
+<tag>BOARD = nucleo-f303re</tag>
+<tag>i2c</tag>
+<tag>periph</tag>
+</tags>
+<status endtime="20181123 14:18:51.691" starttime="20181123 14:18:43.193" status="FAIL" critical="yes">'Error' does not contain 'Success'</status>
+</test>
+<doc>Basic tests to verify functionality of the periph I2C API.</doc>
+<status endtime="20181123 14:18:51.693" starttime="20181123 14:17:41.010" status="FAIL"></status>
+</suite>
+<suite source="/home/kevinweiss/WorkingDirectory/RIOT/tests/periph_i2c/tests/02__periph_i2c_write_register.robot" name="Periph I2C Write Register" id="s1-s2">
+<kw library="BuiltIn" name="Run Keywords" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Reset DUT and PHILIP</arg>
+<arg>DUT Must Have Periph I2C Application</arg>
+</arguments>
+<kw library="philip.keywords" name="Reset DUT and PHILIP">
+<doc>Reset the device under test and the PHILIP tester.</doc>
+<kw library="riot_base.keywords" name="Reset Application">
+<doc>Reset the test application</doc>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:54.764">Slept 3 seconds</msg>
+<status endtime="20181123 14:18:54.765" starttime="20181123 14:18:51.764" status="PASS"></status>
+</kw>
+<kw library="Process" name="Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>make reset</arg>
+<arg>shell=True</arg>
+<arg>cwd=%{APPDIR}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:54.766">Starting process:
+make reset</msg>
+<msg level="INFO" timestamp="20181123 14:18:54.772">Waiting for process to complete.</msg>
+<msg level="INFO" timestamp="20181123 14:18:55.279">Process completed.</msg>
+<status endtime="20181123 14:18:55.280" starttime="20181123 14:18:54.765" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:18:58.281">Slept 3 seconds</msg>
+<status endtime="20181123 14:18:58.281" starttime="20181123 14:18:55.280" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:18:58.281" starttime="20181123 14:18:51.764" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Mcu">
+<doc>Resets the device.</doc>
+<status endtime="20181123 14:18:58.405" starttime="20181123 14:18:58.282" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Dut">
+<status endtime="20181123 14:19:00.414" starttime="20181123 14:18:58.405" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:00.414" starttime="20181123 14:18:51.763" status="PASS"></status>
+</kw>
+<kw library="periph_i2c.keywords" name="DUT Must Have Periph I2C Application">
+<kw library="api_shell.keywords" name="Repeat API Call on Timeout">
+<doc>Repeats the given API ``call`` up to 5 times on timeout.</doc>
+<arguments>
+<arg>I2C Get ID</arg>
+</arguments>
+<kw name="${i} IN RANGE [ 0 | 5 ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw library="BuiltIn" name="Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>API Call Expect</arg>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Get Id">
+<doc>Get the id of the fw.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:19:00.527" starttime="20181123 14:19:00.419" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:19:00.527">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:19:00.527" starttime="20181123 14:19:00.418" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:19:00.528">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:19:00.528" starttime="20181123 14:19:00.528" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20181123 14:19:00.530">'Success' does not contain 'Timeout'</msg>
+<status endtime="20181123 14:19:00.530" starttime="20181123 14:19:00.529" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:19:00.531" starttime="20181123 14:19:00.417" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:19:00.531" starttime="20181123 14:19:00.417" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${RESULT['result']}"!="Timeout"</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw library="BuiltIn" name="Exit For Loop">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg level="INFO" timestamp="20181123 14:19:00.533">Exiting for loop altogether.</msg>
+<status endtime="20181123 14:19:00.533" starttime="20181123 14:19:00.532" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:00.533" starttime="20181123 14:19:00.531" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:00.533" starttime="20181123 14:19:00.416" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:00.533" starttime="20181123 14:19:00.416" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>Success</arg>
+</arguments>
+<status endtime="20181123 14:19:00.534" starttime="20181123 14:19:00.533" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:00.534" starttime="20181123 14:19:00.415" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['msg']}</arg>
+<arg>periph_i2c</arg>
+</arguments>
+<status endtime="20181123 14:19:00.535" starttime="20181123 14:19:00.535" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:00.535" starttime="20181123 14:19:00.415" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:00.535" starttime="20181123 14:18:51.763" status="PASS"></status>
+</kw>
+<test name="One Byte Should Succeed" id="s1-s2-t1">
+<kw library="BuiltIn" name="Run Keywords" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Reset DUT and PHILIP</arg>
+<arg>DUT Must Have Periph I2C Application</arg>
+<arg>I2C Acquire</arg>
+</arguments>
+<kw library="philip.keywords" name="Reset DUT and PHILIP">
+<doc>Reset the device under test and the PHILIP tester.</doc>
+<kw library="riot_base.keywords" name="Reset Application">
+<doc>Reset the test application</doc>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:19:03.540">Slept 3 seconds</msg>
+<status endtime="20181123 14:19:03.541" starttime="20181123 14:19:00.539" status="PASS"></status>
+</kw>
+<kw library="Process" name="Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>make reset</arg>
+<arg>shell=True</arg>
+<arg>cwd=%{APPDIR}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:19:03.542">Starting process:
+make reset</msg>
+<msg level="INFO" timestamp="20181123 14:19:03.548">Waiting for process to complete.</msg>
+<msg level="INFO" timestamp="20181123 14:19:04.041">Process completed.</msg>
+<status endtime="20181123 14:19:04.042" starttime="20181123 14:19:03.541" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:19:07.043">Slept 3 seconds</msg>
+<status endtime="20181123 14:19:07.044" starttime="20181123 14:19:04.042" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:07.044" starttime="20181123 14:19:00.538" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Mcu">
+<doc>Resets the device.</doc>
+<status endtime="20181123 14:19:07.067" starttime="20181123 14:19:07.045" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Dut">
+<status endtime="20181123 14:19:09.077" starttime="20181123 14:19:07.067" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:09.078" starttime="20181123 14:19:00.537" status="PASS"></status>
+</kw>
+<kw library="periph_i2c.keywords" name="DUT Must Have Periph I2C Application">
+<kw library="api_shell.keywords" name="Repeat API Call on Timeout">
+<doc>Repeats the given API ``call`` up to 5 times on timeout.</doc>
+<arguments>
+<arg>I2C Get ID</arg>
+</arguments>
+<kw name="${i} IN RANGE [ 0 | 5 ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw library="BuiltIn" name="Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>API Call Expect</arg>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Get Id">
+<doc>Get the id of the fw.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:19:09.100" starttime="20181123 14:19:09.093" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:19:09.101">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:19:09.101" starttime="20181123 14:19:09.092" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:19:09.104">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:19:09.104" starttime="20181123 14:19:09.102" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20181123 14:19:09.108">'Success' does not contain 'Timeout'</msg>
+<status endtime="20181123 14:19:09.109" starttime="20181123 14:19:09.105" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:19:09.110" starttime="20181123 14:19:09.088" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:19:09.111" starttime="20181123 14:19:09.086" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${RESULT['result']}"!="Timeout"</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw library="BuiltIn" name="Exit For Loop">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg level="INFO" timestamp="20181123 14:19:09.115">Exiting for loop altogether.</msg>
+<status endtime="20181123 14:19:09.115" starttime="20181123 14:19:09.114" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:09.115" starttime="20181123 14:19:09.111" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:09.115" starttime="20181123 14:19:09.085" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:09.116" starttime="20181123 14:19:09.084" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>Success</arg>
+</arguments>
+<status endtime="20181123 14:19:09.119" starttime="20181123 14:19:09.117" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:09.120" starttime="20181123 14:19:09.081" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['msg']}</arg>
+<arg>periph_i2c</arg>
+</arguments>
+<status endtime="20181123 14:19:09.122" starttime="20181123 14:19:09.120" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:09.123" starttime="20181123 14:19:09.079" status="PASS"></status>
+</kw>
+<kw library="I2Cdevice" name="I2c Acquire">
+<doc>Get access to the I2C bus.</doc>
+<status endtime="20181123 14:19:09.133" starttime="20181123 14:19:09.124" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:09.134" starttime="20181123 14:19:00.537" status="PASS"></status>
+</kw>
+<kw library="periph_i2c.keywords" name="I2C Write Bytes To Register Should Succeed">
+<arguments>
+<arg>${I2C_UREG}</arg>
+<arg>${VAL_1}</arg>
+<arg>1</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Should Succeed">
+<doc>Fails if the given API ``call`` does not succeed.</doc>
+<arguments>
+<arg>I2C Write Regs</arg>
+<arg>reg=${reg}</arg>
+<arg>data=${data}</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Success</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Write Regs">
+<doc>Write byte to register.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:19:09.166" starttime="20181123 14:19:09.149" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:19:09.167">${RESULT} = {'msg': 'i2c_0 wrote 1 bytes to reg 0x98', 'result': 'Success', 'data': None, 'cmd': 'i2c_write_regs(0, 0x55, 0x98, 0x00, [0x29])'}</msg>
+<status endtime="20181123 14:19:09.167" starttime="20181123 14:19:09.146" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:19:09.169">${RESULT} = {'msg': 'i2c_0 wrote 1 bytes to reg 0x98', 'result': 'Success', 'data': None, 'cmd': 'i2c_write_regs(0, 0x55, 0x98, 0x00, [0x29])'}</msg>
+<status endtime="20181123 14:19:09.169" starttime="20181123 14:19:09.167" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<status endtime="20181123 14:19:09.171" starttime="20181123 14:19:09.170" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:09.172" starttime="20181123 14:19:09.143" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:09.172" starttime="20181123 14:19:09.138" status="PASS"></status>
+</kw>
+<kw library="api_shell.keywords" name="API Call Should Succeed">
+<doc>Fails if the given API ``call`` does not succeed.</doc>
+<arguments>
+<arg>I2C Read Bytes</arg>
+<arg>leng=${len}</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Success</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Read Bytes">
+<doc>Read bytes from the I2C device.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:19:09.188" starttime="20181123 14:19:09.174" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:19:09.188">${RESULT} = {'msg': 'i2c_0 read 1 byte(s) : [0x29]', 'result': 'Success', 'data': [41], 'cmd': 'i2c_read_bytes(0, 0x55, 1, 0x00)'}</msg>
+<status endtime="20181123 14:19:09.188" starttime="20181123 14:19:09.174" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:19:09.189">${RESULT} = {'msg': 'i2c_0 read 1 byte(s) : [0x29]', 'result': 'Success', 'data': [41], 'cmd': 'i2c_read_bytes(0, 0x55, 1, 0x00)'}</msg>
+<status endtime="20181123 14:19:09.189" starttime="20181123 14:19:09.188" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<status endtime="20181123 14:19:09.189" starttime="20181123 14:19:09.189" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:09.190" starttime="20181123 14:19:09.173" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:09.190" starttime="20181123 14:19:09.173" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${RESULT['data']}</arg>
+<arg>${data}</arg>
+</arguments>
+<status endtime="20181123 14:19:09.190" starttime="20181123 14:19:09.190" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:09.190" starttime="20181123 14:19:09.135" status="PASS"></status>
+</kw>
+<kw library="I2Cdevice" name="I2c Release" type="teardown">
+<doc>Release to the I2C bus.</doc>
+<status endtime="20181123 14:19:09.199" starttime="20181123 14:19:09.191" status="PASS"></status>
+</kw>
+<tags>
+<tag>APP = tests_periph_i2c</tag>
+<tag>BOARD = nucleo-f303re</tag>
+<tag>i2c</tag>
+<tag>periph</tag>
+</tags>
+<status endtime="20181123 14:19:09.199" starttime="20181123 14:19:00.536" status="PASS" critical="yes"></status>
+</test>
+<test name="Two Bytes Should Succeed" id="s1-s2-t2">
+<kw library="BuiltIn" name="Run Keywords" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Reset DUT and PHILIP</arg>
+<arg>DUT Must Have Periph I2C Application</arg>
+<arg>I2C Acquire</arg>
+</arguments>
+<kw library="philip.keywords" name="Reset DUT and PHILIP">
+<doc>Reset the device under test and the PHILIP tester.</doc>
+<kw library="riot_base.keywords" name="Reset Application">
+<doc>Reset the test application</doc>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:19:12.205">Slept 3 seconds</msg>
+<status endtime="20181123 14:19:12.206" starttime="20181123 14:19:09.205" status="PASS"></status>
+</kw>
+<kw library="Process" name="Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>make reset</arg>
+<arg>shell=True</arg>
+<arg>cwd=%{APPDIR}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:19:12.208">Starting process:
+make reset</msg>
+<msg level="INFO" timestamp="20181123 14:19:12.217">Waiting for process to complete.</msg>
+<msg level="INFO" timestamp="20181123 14:19:12.650">Process completed.</msg>
+<status endtime="20181123 14:19:12.650" starttime="20181123 14:19:12.207" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:19:15.651">Slept 3 seconds</msg>
+<status endtime="20181123 14:19:15.652" starttime="20181123 14:19:12.651" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:15.653" starttime="20181123 14:19:09.204" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Mcu">
+<doc>Resets the device.</doc>
+<status endtime="20181123 14:19:15.675" starttime="20181123 14:19:15.653" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Dut">
+<status endtime="20181123 14:19:17.684" starttime="20181123 14:19:15.675" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:17.685" starttime="20181123 14:19:09.204" status="PASS"></status>
+</kw>
+<kw library="periph_i2c.keywords" name="DUT Must Have Periph I2C Application">
+<kw library="api_shell.keywords" name="Repeat API Call on Timeout">
+<doc>Repeats the given API ``call`` up to 5 times on timeout.</doc>
+<arguments>
+<arg>I2C Get ID</arg>
+</arguments>
+<kw name="${i} IN RANGE [ 0 | 5 ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw library="BuiltIn" name="Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>API Call Expect</arg>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Get Id">
+<doc>Get the id of the fw.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:19:17.706" starttime="20181123 14:19:17.700" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:19:17.707">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:19:17.707" starttime="20181123 14:19:17.698" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:19:17.711">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:19:17.712" starttime="20181123 14:19:17.709" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20181123 14:19:17.715">'Success' does not contain 'Timeout'</msg>
+<status endtime="20181123 14:19:17.716" starttime="20181123 14:19:17.713" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:19:17.716" starttime="20181123 14:19:17.694" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:19:17.717" starttime="20181123 14:19:17.693" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${RESULT['result']}"!="Timeout"</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw library="BuiltIn" name="Exit For Loop">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg level="INFO" timestamp="20181123 14:19:17.721">Exiting for loop altogether.</msg>
+<status endtime="20181123 14:19:17.722" starttime="20181123 14:19:17.720" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:17.722" starttime="20181123 14:19:17.717" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:17.722" starttime="20181123 14:19:17.692" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:17.723" starttime="20181123 14:19:17.691" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>Success</arg>
+</arguments>
+<status endtime="20181123 14:19:17.725" starttime="20181123 14:19:17.723" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:17.726" starttime="20181123 14:19:17.689" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['msg']}</arg>
+<arg>periph_i2c</arg>
+</arguments>
+<status endtime="20181123 14:19:17.729" starttime="20181123 14:19:17.727" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:17.729" starttime="20181123 14:19:17.687" status="PASS"></status>
+</kw>
+<kw library="I2Cdevice" name="I2c Acquire">
+<doc>Get access to the I2C bus.</doc>
+<status endtime="20181123 14:19:17.739" starttime="20181123 14:19:17.730" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:17.747" starttime="20181123 14:19:09.203" status="PASS"></status>
+</kw>
+<kw library="periph_i2c.keywords" name="I2C Write Bytes To Register Should Succeed">
+<arguments>
+<arg>${I2C_UREG}</arg>
+<arg>${VAL_2}</arg>
+<arg>2</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Should Succeed">
+<doc>Fails if the given API ``call`` does not succeed.</doc>
+<arguments>
+<arg>I2C Write Regs</arg>
+<arg>reg=${reg}</arg>
+<arg>data=${data}</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Success</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Write Regs">
+<doc>Write byte to register.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:19:17.778" starttime="20181123 14:19:17.760" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:19:17.778">${RESULT} = {'msg': 'i2c_0 wrote 2 bytes to reg 0x98', 'result': 'Success', 'data': None, 'cmd': 'i2c_write_regs(0, 0x55, 0x98, 0x00, [0x2a, 0x2b])'}</msg>
+<status endtime="20181123 14:19:17.778" starttime="20181123 14:19:17.758" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:19:17.779">${RESULT} = {'msg': 'i2c_0 wrote 2 bytes to reg 0x98', 'result': 'Success', 'data': None, 'cmd': 'i2c_write_regs(0, 0x55, 0x98, 0x00, [0x2a, 0x2b])'}</msg>
+<status endtime="20181123 14:19:17.779" starttime="20181123 14:19:17.779" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<status endtime="20181123 14:19:17.780" starttime="20181123 14:19:17.780" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:17.781" starttime="20181123 14:19:17.754" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:17.781" starttime="20181123 14:19:17.750" status="PASS"></status>
+</kw>
+<kw library="api_shell.keywords" name="API Call Should Succeed">
+<doc>Fails if the given API ``call`` does not succeed.</doc>
+<arguments>
+<arg>I2C Read Bytes</arg>
+<arg>leng=${len}</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Success</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Read Bytes">
+<doc>Read bytes from the I2C device.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:19:17.798" starttime="20181123 14:19:17.784" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:19:17.798">${RESULT} = {'msg': 'i2c_0 read 2 byte(s) : [0x2a, 0x2b]', 'result': 'Success', 'data': [42, 43], 'cmd': 'i2c_read_bytes(0, 0x55, 2, 0x00)'}</msg>
+<status endtime="20181123 14:19:17.798" starttime="20181123 14:19:17.783" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:19:17.800">${RESULT} = {'msg': 'i2c_0 read 2 byte(s) : [0x2a, 0x2b]', 'result': 'Success', 'data': [42, 43], 'cmd': 'i2c_read_bytes(0, 0x55, 2, 0x00)'}</msg>
+<status endtime="20181123 14:19:17.800" starttime="20181123 14:19:17.799" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<status endtime="20181123 14:19:17.801" starttime="20181123 14:19:17.800" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:17.802" starttime="20181123 14:19:17.782" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:17.802" starttime="20181123 14:19:17.781" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${RESULT['data']}</arg>
+<arg>${data}</arg>
+</arguments>
+<status endtime="20181123 14:19:17.803" starttime="20181123 14:19:17.802" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:17.803" starttime="20181123 14:19:17.749" status="PASS"></status>
+</kw>
+<kw library="I2Cdevice" name="I2c Release" type="teardown">
+<doc>Release to the I2C bus.</doc>
+<status endtime="20181123 14:19:17.812" starttime="20181123 14:19:17.804" status="PASS"></status>
+</kw>
+<tags>
+<tag>APP = tests_periph_i2c</tag>
+<tag>BOARD = nucleo-f303re</tag>
+<tag>i2c</tag>
+<tag>periph</tag>
+</tags>
+<status endtime="20181123 14:19:17.812" starttime="20181123 14:19:09.200" status="PASS" critical="yes"></status>
+</test>
+<test name="Ten Bytes Should Succeed" id="s1-s2-t3">
+<kw library="BuiltIn" name="Run Keywords" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Reset DUT and PHILIP</arg>
+<arg>DUT Must Have Periph I2C Application</arg>
+<arg>I2C Acquire</arg>
+</arguments>
+<kw library="philip.keywords" name="Reset DUT and PHILIP">
+<doc>Reset the device under test and the PHILIP tester.</doc>
+<kw library="riot_base.keywords" name="Reset Application">
+<doc>Reset the test application</doc>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:19:20.817">Slept 3 seconds</msg>
+<status endtime="20181123 14:19:20.817" starttime="20181123 14:19:17.816" status="PASS"></status>
+</kw>
+<kw library="Process" name="Run Process">
+<doc>Runs a process and waits for it to complete.</doc>
+<arguments>
+<arg>make reset</arg>
+<arg>shell=True</arg>
+<arg>cwd=%{APPDIR}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:19:20.818">Starting process:
+make reset</msg>
+<msg level="INFO" timestamp="20181123 14:19:20.825">Waiting for process to complete.</msg>
+<msg level="INFO" timestamp="20181123 14:19:21.423">Process completed.</msg>
+<status endtime="20181123 14:19:21.424" starttime="20181123 14:19:20.818" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:19:24.426">Slept 3 seconds</msg>
+<status endtime="20181123 14:19:24.427" starttime="20181123 14:19:21.425" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:24.428" starttime="20181123 14:19:17.815" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Mcu">
+<doc>Resets the device.</doc>
+<status endtime="20181123 14:19:24.451" starttime="20181123 14:19:24.429" status="PASS"></status>
+</kw>
+<kw library="PHILIP" name="Reset Dut">
+<status endtime="20181123 14:19:26.462" starttime="20181123 14:19:24.452" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:26.462" starttime="20181123 14:19:17.815" status="PASS"></status>
+</kw>
+<kw library="periph_i2c.keywords" name="DUT Must Have Periph I2C Application">
+<kw library="api_shell.keywords" name="Repeat API Call on Timeout">
+<doc>Repeats the given API ``call`` up to 5 times on timeout.</doc>
+<arguments>
+<arg>I2C Get ID</arg>
+</arguments>
+<kw name="${i} IN RANGE [ 0 | 5 ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw library="BuiltIn" name="Run Keyword And Ignore Error">
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<arguments>
+<arg>API Call Expect</arg>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Timeout</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Get Id">
+<doc>Get the id of the fw.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:19:26.477" starttime="20181123 14:19:26.471" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:19:26.477">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:19:26.477" starttime="20181123 14:19:26.470" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:19:26.478">${RESULT} = {'msg': '[periph_i2c]', 'result': 'Success', 'data': ['periph_i2c'], 'cmd': 'i2c_get_id'}</msg>
+<status endtime="20181123 14:19:26.478" starttime="20181123 14:19:26.478" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20181123 14:19:26.479">'Success' does not contain 'Timeout'</msg>
+<status endtime="20181123 14:19:26.479" starttime="20181123 14:19:26.479" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:19:26.480" starttime="20181123 14:19:26.467" status="FAIL"></status>
+</kw>
+<status endtime="20181123 14:19:26.480" starttime="20181123 14:19:26.467" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Run Keyword If">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${RESULT['result']}"!="Timeout"</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw library="BuiltIn" name="Exit For Loop">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg level="INFO" timestamp="20181123 14:19:26.481">Exiting for loop altogether.</msg>
+<status endtime="20181123 14:19:26.482" starttime="20181123 14:19:26.481" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:26.482" starttime="20181123 14:19:26.480" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:26.482" starttime="20181123 14:19:26.465" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:26.482" starttime="20181123 14:19:26.464" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>Success</arg>
+</arguments>
+<status endtime="20181123 14:19:26.484" starttime="20181123 14:19:26.483" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:26.485" starttime="20181123 14:19:26.463" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['msg']}</arg>
+<arg>periph_i2c</arg>
+</arguments>
+<status endtime="20181123 14:19:26.485" starttime="20181123 14:19:26.485" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:26.486" starttime="20181123 14:19:26.462" status="PASS"></status>
+</kw>
+<kw library="I2Cdevice" name="I2c Acquire">
+<doc>Get access to the I2C bus.</doc>
+<status endtime="20181123 14:19:26.494" starttime="20181123 14:19:26.486" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:26.494" starttime="20181123 14:19:17.814" status="PASS"></status>
+</kw>
+<kw library="periph_i2c.keywords" name="I2C Write Bytes To Register Should Succeed">
+<arguments>
+<arg>${I2C_UREG}</arg>
+<arg>${VAL_10}</arg>
+<arg>10</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Should Succeed">
+<doc>Fails if the given API ``call`` does not succeed.</doc>
+<arguments>
+<arg>I2C Write Regs</arg>
+<arg>reg=${reg}</arg>
+<arg>data=${data}</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Success</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Write Regs">
+<doc>Write byte to register.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:19:26.524" starttime="20181123 14:19:26.498" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:19:26.524">${RESULT} = {'msg': 'i2c_0 wrote 10 bytes to reg 0x98', 'result': 'Success', 'data': None, 'cmd': 'i2c_write_regs(0, 0x55, 0x98, 0x00, [0x2f, 0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38])'}</msg>
+<status endtime="20181123 14:19:26.524" starttime="20181123 14:19:26.498" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:19:26.525">${RESULT} = {'msg': 'i2c_0 wrote 10 bytes to reg 0x98', 'result': 'Success', 'data': None, 'cmd': 'i2c_write_regs(0, 0x55, 0x98, 0x00, [0x2f, 0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38])'}</msg>
+<status endtime="20181123 14:19:26.525" starttime="20181123 14:19:26.524" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<status endtime="20181123 14:19:26.526" starttime="20181123 14:19:26.525" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:26.526" starttime="20181123 14:19:26.496" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:26.526" starttime="20181123 14:19:26.495" status="PASS"></status>
+</kw>
+<kw library="api_shell.keywords" name="API Call Should Succeed">
+<doc>Fails if the given API ``call`` does not succeed.</doc>
+<arguments>
+<arg>I2C Read Bytes</arg>
+<arg>leng=${len}</arg>
+</arguments>
+<kw library="api_shell.keywords" name="API Call Expect">
+<doc>Fails if the result of the given ``call`` does not</doc>
+<arguments>
+<arg>Success</arg>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<kw library="BuiltIn" name="Run Keyword">
+<doc>Executes the given keyword with the given arguments.</doc>
+<arguments>
+<arg>${call}</arg>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<kw library="I2Cdevice" name="I2c Read Bytes">
+<doc>Read bytes from the I2C device.</doc>
+<arguments>
+<arg>@{args}</arg>
+<arg>&amp;{kwargs}</arg>
+</arguments>
+<status endtime="20181123 14:19:26.548" starttime="20181123 14:19:26.530" status="PASS"></status>
+</kw>
+<msg level="INFO" timestamp="20181123 14:19:26.549">${RESULT} = {'msg': 'i2c_0 read 10 byte(s) : [0x2f, 0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38]', 'result': 'Success', 'data': [47, 48, 49, 50, 51, 52, 53, 54, 55, 56], 'cmd': 'i2c_read_bytes(0, 0x55, 1...</msg>
+<status endtime="20181123 14:19:26.550" starttime="20181123 14:19:26.529" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Suite Variable">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+</arguments>
+<msg level="INFO" timestamp="20181123 14:19:26.551">${RESULT} = {'msg': 'i2c_0 read 10 byte(s) : [0x2f, 0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38]', 'result': 'Success', 'data': [47, 48, 49, 50, 51, 52, 53, 54, 55, 56], 'cmd': 'i2c_read_bytes(0, 0x55, 1...</msg>
+<status endtime="20181123 14:19:26.551" starttime="20181123 14:19:26.550" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Contain">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${RESULT['result']}</arg>
+<arg>${expect}</arg>
+</arguments>
+<status endtime="20181123 14:19:26.552" starttime="20181123 14:19:26.552" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:26.552" starttime="20181123 14:19:26.527" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:26.553" starttime="20181123 14:19:26.526" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${RESULT['data']}</arg>
+<arg>${data}</arg>
+</arguments>
+<status endtime="20181123 14:19:26.554" starttime="20181123 14:19:26.553" status="PASS"></status>
+</kw>
+<status endtime="20181123 14:19:26.554" starttime="20181123 14:19:26.494" status="PASS"></status>
+</kw>
+<kw library="I2Cdevice" name="I2c Release" type="teardown">
+<doc>Release to the I2C bus.</doc>
+<status endtime="20181123 14:19:26.564" starttime="20181123 14:19:26.555" status="PASS"></status>
+</kw>
+<tags>
+<tag>APP = tests_periph_i2c</tag>
+<tag>BOARD = nucleo-f303re</tag>
+<tag>i2c</tag>
+<tag>periph</tag>
+</tags>
+<status endtime="20181123 14:19:26.564" starttime="20181123 14:19:17.813" status="PASS" critical="yes"></status>
+</test>
+<doc>Data driven tests to verify writing to a valid register.</doc>
+<status endtime="20181123 14:19:26.567" starttime="20181123 14:18:51.738" status="PASS"></status>
+</suite>
+<metadata>
+<item name="RIOT-Board">nucleo-f303re</item>
+<item name="RIOT-Version">2018.10-devel-1280-g2b66b-kevinweisswork-test/10147/robot2</item>
+</metadata>
+<status endtime="20181123 14:19:26.617" starttime="20181123 14:17:40.980" status="FAIL"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="8">Critical Tests</stat>
+<stat fail="1" pass="8">All Tests</stat>
+</total>
+<tag>
+<stat info="non-critical" fail="0" pass="0">warn-if-failed</stat>
+<stat fail="1" pass="8">APP = tests_periph_i2c</stat>
+<stat fail="1" pass="8">BOARD = nucleo-f303re</stat>
+<stat fail="1" pass="8">i2c</stat>
+<stat fail="1" pass="8">periph</stat>
+</tag>
+<suite>
+<stat fail="1" name="tests periph i2c ON nucleo-f303re" id="s1" pass="8">tests periph i2c ON nucleo-f303re</stat>
+<stat fail="1" name="Periph I2C Base" id="s1-s1" pass="5">tests periph i2c ON nucleo-f303re.Periph I2C Base</stat>
+<stat fail="0" name="Periph I2C Write Register" id="s1-s2" pass="3">tests periph i2c ON nucleo-f303re.Periph I2C Write Register</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
