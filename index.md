@@ -1,0 +1,5 @@
+- [PHiLIP (Primitive Hardware In the Loop Integration Product)](philip/philip_README.md)
+- [MMM (Memory Map Generator)](https://github.com/riot-appstore/memory_map_manager)
+- [riot_pal(RIOT protocol abstraction layer)](https://github.com/RIOT-OS/riot_pal)
+- [RIOT-OS (RIOT operating system)](https://github.com/RIOT-OS/RIOT)
+- [RAPstore (RIOT app store)](https://github.com/riot-appstore/)
