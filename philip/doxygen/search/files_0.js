@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['adc_2ec',['adc.c',['../adc_8c.html',1,'']]],
+  ['adc_2eh',['adc.h',['../adc_8h.html',1,'']]],
   ['app_5fcommon_2ec',['app_common.c',['../app__common_8c.html',1,'']]],
   ['app_5fcommon_2eh',['app_common.h',['../app__common_8h.html',1,'']]],
   ['app_5freg_2ec',['app_reg.c',['../app__reg_8c.html',1,'']]],

@@ -1,6 +1,26 @@
 var searchData=
 [
-  ['udr',['udr',['../structspi__status__t.html#a1f12442af57d0abee4199a55cc1f9dcd',1,'spi_status_t']]],
-  ['update',['update',['../structsys__status__t.html#a52907611a5750e190e4ff0fcf5401c27',1,'sys_status_t']]],
-  ['user_5freg',['user_reg',['../unionmap__t.html#af7e977bbf6859a2921de66d20e6485e7',1,'map_t']]]
+  ['s_5fticks',['s_ticks',['../unioni2c__t.html#ae3eac1c6d967e5bd29faf68669c6d2e5',1,'i2c_t']]],
+  ['sample',['sample',['../unionadc__t.html#a2f80115081a04e2b49c67287aa36e5bb',1,'adc_t']]],
+  ['saved_5freg',['saved_reg',['../structadc__dev.html#ad22ecd8d600b85ff7615d99fc646a2e0',1,'adc_dev::saved_reg()'],['../structgpio__dev.html#a8e583ed73f1658f9a779a27e2bc9eae7',1,'gpio_dev::saved_reg()'],['../structi2c__dev.html#a9208d0616521a8d8b3f11e9faf5e1948',1,'i2c_dev::saved_reg()'],['../structpwm__dev.html#abae3da6aafab1c30cc013732c922f810',1,'pwm_dev::saved_reg()'],['../structdac__dev.html#a05f9fc54d1f880b4b4517854ea68d3ef',1,'dac_dev::saved_reg()'],['../structspi__dev.html#a736f2f53aaf92a0af5a25aeb60296e55',1,'spi_dev::saved_reg()'],['../structuart__dev__t.html#a2592c8984900249a5af11b3522dccd19',1,'uart_dev_t::saved_reg()']]],
+  ['second',['second',['../uniontimestamp__t.html#a59b9c870a427b56ebf68f9f7a90331c2',1,'timestamp_t::second()'],['../unionrtc__t.html#a39f9c3878ce1f3348f6cd77bc26a9308',1,'rtc_t::second()']]],
+  ['set_5fday',['set_day',['../unionrtc__t.html#a8e1748de16bb274d602ade763757321b',1,'rtc_t']]],
+  ['set_5fhour',['set_hour',['../unionrtc__t.html#a83e4778ac7155ee51093b2a943dc5819',1,'rtc_t']]],
+  ['set_5fminute',['set_minute',['../unionrtc__t.html#aa8bd801621a638be2f8e4ee0d917ac55',1,'rtc_t']]],
+  ['set_5fsecond',['set_second',['../unionrtc__t.html#a21bd581d38ab0f7c4bcef12515e3f689',1,'rtc_t']]],
+  ['slave_5faddr_5f1',['slave_addr_1',['../unioni2c__t.html#a89a375fdaba028f2c9e14e463f8b48ec',1,'i2c_t']]],
+  ['slave_5faddr_5f2',['slave_addr_2',['../unioni2c__t.html#afd1aa5aa68d8ecd0d8fc71edac3ebdc1',1,'i2c_t']]],
+  ['sn',['sn',['../unionsys__t.html#a83580a2dc3a89d35c8e3549232a79344',1,'sys_t']]],
+  ['source',['source',['../uniontrace__t.html#a55ed6f76f3d302ae69598a9e4c12bb63',1,'trace_t']]],
+  ['spi',['spi',['../unionmap__t.html#ab483e3444dc971ce77dacbaa5bdc8009',1,'map_t']]],
+  ['start_5fclk',['start_clk',['../structspi__status__t.html#a44962801b1c712a6e131067d344d3d52',1,'spi_status_t']]],
+  ['start_5freg_5findex',['start_reg_index',['../unioni2c__t.html#ac387e7b367969ecf12fe3416fcc4c110',1,'i2c_t::start_reg_index()'],['../unionspi__t.html#a6ffb1ada4041e5ee390b93467d959820',1,'spi_t::start_reg_index()']]],
+  ['state',['state',['../unioni2c__t.html#a2141eff555884f863ae09e6cbd4283b1',1,'i2c_t::state()'],['../unionspi__t.html#a03925422d3acf195ea304692787195e8',1,'spi_t::state()']]],
+  ['status',['status',['../unionsys__t.html#a09313fd4236d1d574a52430a029327a3',1,'sys_t::status()'],['../unioni2c__t.html#a55b46e28667596b1b6b8e343d6eff780',1,'i2c_t::status()'],['../unionspi__t.html#a0635068fe619e6ed47d5750a4d377899',1,'spi_t::status()'],['../unionuart__t.html#ac51daa92116c5bf50c27e9bf1a3b120d',1,'uart_t::status()'],['../unionpwm__t.html#a347953b8e1aa37d791815b3f42eb631e',1,'pwm_t::status()'],['../uniondac__t.html#ae16fae0dcc0a2bfa8fafcfa00c285416',1,'dac_t::status()'],['../uniongpio__t.html#aef3d11ebdc6bd521be7d7e0de6171399',1,'gpio_t::status()']]],
+  ['stop_5fbits',['stop_bits',['../structuart__mode__t.html#aa0f272d8ac08ccd0a81b452f78dbb131',1,'uart_mode_t']]],
+  ['str',['str',['../structuart__dev__t.html#a9e9be6ea3a2af1ce7e6fe534e4f94e6d',1,'uart_dev_t']]],
+  ['sum',['sum',['../unionadc__t.html#a761b0ae5bbcb4a9dcb213660387b8209',1,'adc_t']]],
+  ['sys',['sys',['../unionmap__t.html#ac9f3a907dc0cbcedfdc3f6ddd946c5ff',1,'map_t']]],
+  ['sys_5fclk',['sys_clk',['../unionsys__t.html#a23d961b1591d26e8a0e64ac09c370809',1,'sys_t']]],
+  ['systemcoreclock',['SystemCoreClock',['../system__stm32f1xx_8c.html#aa3cd3e43291e81e795d642b79b6088e6',1,'system_stm32f1xx.c']]]
 ];

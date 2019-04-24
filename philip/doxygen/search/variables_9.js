@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['nack_5fdata',['nack_data',['../structi2c__mode__t.html#a5bc08f44f380479a31d940a9e03142c7',1,'i2c_mode_t']]],
-  ['nf',['nf',['../structuart__status__t.html#a61ba9b9fb4268f6348940a9221c9f3e0',1,'uart_status_t']]],
-  ['no_5fclk_5fstretch',['no_clk_stretch',['../structi2c__mode__t.html#a10538ab0ebd6631c53a909a100e09759',1,'i2c_mode_t']]]
+  ['l_5fticks',['l_ticks',['../unionpwm__t.html#af850a6bcaa568971f5af4df6872b4ed5',1,'pwm_t']]],
+  ['level',['level',['../structgpio__mode__t.html#acddb21a84731e1f1b053e2af80543bba',1,'gpio_mode_t::level()'],['../structgpio__status__t.html#a29185f8f55e6d70082e444cd4ef92fe3',1,'gpio_status_t::level()'],['../uniondac__t.html#ae88b4d9ffcbbf3a1a5eb8a3421e2c52e',1,'dac_t::level()']]]
 ];

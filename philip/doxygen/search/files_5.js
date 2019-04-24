@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['spi_2ec',['spi.c',['../spi_8c.html',1,'']]],
-  ['spi_2eh',['spi.h',['../spi_8h.html',1,'']]],
-  ['stm32f1xx_5fhal_5fconf_2eh',['stm32f1xx_hal_conf.h',['../stm32f1xx__hal__conf_8h.html',1,'']]],
-  ['stm32f1xx_5fit_2ec',['stm32f1xx_it.c',['../stm32f1xx__it_8c.html',1,'']]],
-  ['stm32f1xx_5fit_2eh',['stm32f1xx_it.h',['../stm32f1xx__it_8h.html',1,'']]],
-  ['sys_2ec',['sys.c',['../sys_8c.html',1,'']]],
-  ['sys_2eh',['sys.h',['../sys_8h.html',1,'']]],
-  ['system_5fstm32f1xx_2ec',['system_stm32f1xx.c',['../system__stm32f1xx_8c.html',1,'']]]
+  ['philip_5faccess_2ec',['PHiLIP_access.c',['../PHiLIP__access_8c.html',1,'']]],
+  ['philip_5fdefaults_2ec',['PHiLIP_defaults.c',['../PHiLIP__defaults_8c.html',1,'']]],
+  ['philip_5fdefaults_2eh',['PHiLIP_defaults.h',['../PHiLIP__defaults_8h.html',1,'']]],
+  ['philip_5fmap_2ec',['PHiLIP_map.c',['../PHiLIP__map_8c.html',1,'']]],
+  ['philip_5fmap_2eh',['PHiLIP_map.h',['../PHiLIP__map_8h.html',1,'']]],
+  ['philip_5ftypedef_2eh',['PHiLIP_typedef.h',['../PHiLIP__typedef_8h.html',1,'']]],
+  ['pwm_5fdac_2ec',['pwm_dac.c',['../pwm__dac_8c.html',1,'']]],
+  ['pwm_5fdac_2eh',['pwm_dac.h',['../pwm__dac_8h.html',1,'']]]
 ];

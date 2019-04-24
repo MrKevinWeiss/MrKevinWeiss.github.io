@@ -1,0 +1,145 @@
+var group__periph =
+[
+    [ "adc.h", "adc_8h.html", null ],
+    [ "gpio.h", "gpio_8h.html", null ],
+    [ "i2c.h", "i2c_8h.html", null ],
+    [ "led_flash.h", "led__flash_8h.html", null ],
+    [ "pwm_dac.h", "pwm__dac_8h.html", null ],
+    [ "rtc.h", "rtc_8h.html", null ],
+    [ "spi.h", "spi_8h.html", null ],
+    [ "sys.h", "sys_8h.html", null ],
+    [ "trace.h", "trace_8h.html", null ],
+    [ "uart.h", "uart_8h.html", null ],
+    [ "wdt.h", "wdt_8h.html", null ],
+    [ "adc.c", "adc_8c.html", null ],
+    [ "gpio.c", "gpio_8c.html", null ],
+    [ "i2c.c", "i2c_8c.html", null ],
+    [ "led_flash.c", "led__flash_8c.html", null ],
+    [ "pwm_dac.c", "pwm__dac_8c.html", null ],
+    [ "rtc.c", "rtc_8c.html", null ],
+    [ "spi.c", "spi_8c.html", null ],
+    [ "sys.c", "sys_8c.html", null ],
+    [ "trace.c", "trace_8c.html", null ],
+    [ "wdt.c", "wdt_8c.html", null ],
+    [ "gpio_dev", "structgpio__dev.html", [
+      [ "hgpio", "structgpio__dev.html#a6e643d68ef237ec09e684ed30761e9e9", null ],
+      [ "port", "structgpio__dev.html#ac152e235d130f8f79b5f5cd289baa66b", null ],
+      [ "reg", "structgpio__dev.html#af9a0e34e5d9761c138a9f011033c00de", null ],
+      [ "saved_reg", "structgpio__dev.html#a8e583ed73f1658f9a779a27e2bc9eae7", null ]
+    ] ],
+    [ "i2c_dev", "structi2c__dev.html", [
+      [ "hi2c", "structi2c__dev.html#ad3c60b7b3199cc404eda6d3f50cdc9b6", null ],
+      [ "reg", "structi2c__dev.html#ae5174b6aa70b524fbe99d3327b881133", null ],
+      [ "saved_reg", "structi2c__dev.html#a9208d0616521a8d8b3f11e9faf5e1948", null ]
+    ] ],
+    [ "pwm_dev", "structpwm__dev.html", [
+      [ "hoc", "structpwm__dev.html#af373d26942383ce4a077a377e6b20071", null ],
+      [ "htmr", "structpwm__dev.html#abb7c5cde37e29911034b8deb90f2ab25", null ],
+      [ "reg", "structpwm__dev.html#accabd4adc62ad47ea5c9269d352fcff3", null ],
+      [ "saved_reg", "structpwm__dev.html#abae3da6aafab1c30cc013732c922f810", null ]
+    ] ],
+    [ "dac_dev", "structdac__dev.html", [
+      [ "hoc", "structdac__dev.html#acd613e5f4af6cc4aa56f75868f0a37e0", null ],
+      [ "htmr", "structdac__dev.html#a3f1f94f21e54ca5b42d1094dbc234906", null ],
+      [ "reg", "structdac__dev.html#a7b89338093028154d69ab149c5614b25", null ],
+      [ "saved_reg", "structdac__dev.html#a05f9fc54d1f880b4b4517854ea68d3ef", null ]
+    ] ],
+    [ "spi_dev", "structspi__dev.html", [
+      [ "hspi", "structspi__dev.html#a7e0d8b7955b7459ac827aa134929bcd3", null ],
+      [ "if_mode_int", "structspi__dev.html#af8daf467a478d815d985ab085f13963e", null ],
+      [ "initial_byte", "structspi__dev.html#affc3c4379fe6a3f563fb9a3aa265edd1", null ],
+      [ "reg", "structspi__dev.html#ad24e10ac19139fba2f6808f63fd24a0d", null ],
+      [ "saved_reg", "structspi__dev.html#a736f2f53aaf92a0af5a25aeb60296e55", null ]
+    ] ],
+    [ "FLASH_TIME_MS", "group__periph.html#gafd6518159ad343e249e1bf559ee2ce9b", null ],
+    [ "MAJOR_FLASHES", "group__periph.html#ga78be6d67fecff15e97560d1252ada42f", null ],
+    [ "MINOR_FLASHES", "group__periph.html#ga2376cc588ed23571e86171d8a89785d4", null ],
+    [ "PATCH_FLASHES", "group__periph.html#ga96af927cda5b62e303060abe5fe4fa91", null ],
+    [ "SPI_NO_DATA_BYTE", "group__periph.html#ga6320c807b0bfbcdbaaf4f018d57b7b73", null ],
+    [ "START_WAIT_FLASHES", "group__periph.html#gaf4369bb2bc11d3c130e40579f8f556a9", null ],
+    [ "UART_DUT_BUF_SIZE", "group__periph.html#gae7c34bc2ad89704c62851984780e4c26", null ],
+    [ "UART_IF_BUF_SIZE", "group__periph.html#ga75f93735759cb2d883ffa6fb6ed63ba4", null ],
+    [ "WAIT_FLASHES", "group__periph.html#ga6a27d8e776c36c64357ab58c777aa786", null ],
+    [ "EVENT_SOURCES", "group__periph.html#gabbe55dcdbec7403607e9b9b7e51a44b3", [
+      [ "SOURCE_NONE", "group__periph.html#ggabbe55dcdbec7403607e9b9b7e51a44b3ad1a7be3cf7719704f79ae160701b25ed", null ],
+      [ "SOURCE_DEBUG0", "group__periph.html#ggabbe55dcdbec7403607e9b9b7e51a44b3a6e90382ce503990bc0afcc9a24efe980", null ],
+      [ "SOURCE_DEBUG1", "group__periph.html#ggabbe55dcdbec7403607e9b9b7e51a44b3ae00a9be32e1c0860891bf953e189ba8b", null ],
+      [ "SOURCE_DEBUG2", "group__periph.html#ggabbe55dcdbec7403607e9b9b7e51a44b3af5602e865a58ad2b432816d82f99a444", null ]
+    ] ],
+    [ "EVENT_TYPE", "group__periph.html#gaacea4a7e80c7ca11553910c740986045", [
+      [ "EVENT_TYPE_FALLING", "group__periph.html#ggaacea4a7e80c7ca11553910c740986045a1ce294e12df339e201012c6f6555bd1f", null ],
+      [ "EVENT_TYPE_RISING", "group__periph.html#ggaacea4a7e80c7ca11553910c740986045af17362df808406b7d130521c2bb578ff", null ]
+    ] ],
+    [ "FLASH_STATE", "group__periph.html#ga50f9a9f003b08736992178f24cba14b0", [
+      [ "FLASH_START", "group__periph.html#gga50f9a9f003b08736992178f24cba14b0aaa893dace22ad561cde8875704d6a4b3", null ],
+      [ "FLASH_MAJOR", "group__periph.html#gga50f9a9f003b08736992178f24cba14b0a0bbb3caa9c00a163a22ced59b19301d4", null ],
+      [ "FLASH_WAIT_MAJOR", "group__periph.html#gga50f9a9f003b08736992178f24cba14b0a8a6cad12b88bae09b9d1c1a18d2fb4eb", null ],
+      [ "FLASH_MINOR", "group__periph.html#gga50f9a9f003b08736992178f24cba14b0a32f994c8f458a94c9cee442bf5af439c", null ],
+      [ "FLASH_WAIT_MINOR", "group__periph.html#gga50f9a9f003b08736992178f24cba14b0a1e955c2b500bc5ddc709d9297f0b0fde", null ],
+      [ "FLASH_PATCH", "group__periph.html#gga50f9a9f003b08736992178f24cba14b0a3b73ed21d516a29416d96c1631c207cc", null ]
+    ] ],
+    [ "GPIO_IO_TYPE", "group__periph.html#ga1f5d391cf7d36ccd2b153150e07eb513", [
+      [ "GPIO_IN", "group__periph.html#gga1f5d391cf7d36ccd2b153150e07eb513a3343e227f62c4c536efff81438a8e155", null ],
+      [ "GPIO_OUT_PP", "group__periph.html#gga1f5d391cf7d36ccd2b153150e07eb513a3033ccb6574d9c80913215d67058fc63", null ],
+      [ "GPIO_OUT_OD", "group__periph.html#gga1f5d391cf7d36ccd2b153150e07eb513a001ee42b382da09d162d9e0fcce7e5b0", null ],
+      [ "GPIO_INTERRUPT", "group__periph.html#gga1f5d391cf7d36ccd2b153150e07eb513a57dc00fbf40422f0693727e00695ca6d", null ]
+    ] ],
+    [ "I2C_STATE", "group__periph.html#ga35f82c39bf28ecf0fa52c553ca7ab090", [
+      [ "I2C_INITIALIZED", "group__periph.html#gga35f82c39bf28ecf0fa52c553ca7ab090a75f5937c11fc2eeeae0e27d8f59e091c", null ],
+      [ "I2C_READING_DATA", "group__periph.html#gga35f82c39bf28ecf0fa52c553ca7ab090ac47f44f44edf19becb9777fb8ed311d9", null ],
+      [ "I2C_WRITE_ADDRESS_RECEIVED", "group__periph.html#gga35f82c39bf28ecf0fa52c553ca7ab090ada40c49ce490e1f49f8563e45c9a16ac", null ],
+      [ "I2C_WRITE_1ST_REG_BYTE_RECEIVED", "group__periph.html#gga35f82c39bf28ecf0fa52c553ca7ab090a807d1bf168b3e11b3f61f89e2114552c", null ],
+      [ "I2C_WRITING_DATA", "group__periph.html#gga35f82c39bf28ecf0fa52c553ca7ab090a2001310adcc50015e91ee4fb96e95a6c", null ],
+      [ "I2C_ADDR_NACK", "group__periph.html#gga35f82c39bf28ecf0fa52c553ca7ab090aec158a2e8ce12cc6e4cc8f34c7c54eda", null ],
+      [ "I2C_STOPPED", "group__periph.html#gga35f82c39bf28ecf0fa52c553ca7ab090ad409b2a8c23c44f122c618aea918bed6", null ]
+    ] ],
+    [ "SPI_IF_TYPE", "group__periph.html#ga49babda92ba4f2056f2f24090632eb94", [
+      [ "SPI_IF_TYPE_REG", "group__periph.html#gga49babda92ba4f2056f2f24090632eb94a1522d79e7dab0cb23487c7cbd4419a54", null ],
+      [ "SPI_IF_TYPE_HS", "group__periph.html#gga49babda92ba4f2056f2f24090632eb94aa8b49a92d0fe8a14fcbcef5c33a7d9c3", null ],
+      [ "SPI_IF_TYPE_ECHO", "group__periph.html#gga49babda92ba4f2056f2f24090632eb94a474323b4235bba0fe2262b728606411a", null ],
+      [ "SPI_IF_TYPE_CONST", "group__periph.html#gga49babda92ba4f2056f2f24090632eb94a998625e5f9f61b124c2cbea5eb340583", null ]
+    ] ],
+    [ "SPI_STATE", "group__periph.html#ga5c94794b59ef8fd0fd786422d4c07f12", [
+      [ "SPI_INITIALIZED", "group__periph.html#gga5c94794b59ef8fd0fd786422d4c07f12a26bd010fd4b388560a0c1f9c11df4e9e", null ],
+      [ "SPI_FRAME_STARTED", "group__periph.html#gga5c94794b59ef8fd0fd786422d4c07f12a3095997f4bf46a46821a1bc509526f4d", null ],
+      [ "SPI_WRITING", "group__periph.html#gga5c94794b59ef8fd0fd786422d4c07f12aa90d1b4737606fb6c4286710b5d1c8fd", null ],
+      [ "SPI_READING", "group__periph.html#gga5c94794b59ef8fd0fd786422d4c07f12a1b9af889865aeea45ad1a56ca83db469", null ],
+      [ "SPI_TRANSFERING", "group__periph.html#gga5c94794b59ef8fd0fd786422d4c07f12aa631d91434f239f251fab89e84b1d956", null ],
+      [ "SPI_FRAME_FINISHED", "group__periph.html#gga5c94794b59ef8fd0fd786422d4c07f12ae2de4354d864b1626ef5e5b59747c7a0", null ]
+    ] ],
+    [ "commit_debug", "group__periph.html#ga8e310c9548b13a5041bd48c40212aea2", null ],
+    [ "commit_dut_adc", "group__periph.html#ga58c165b225a4c51c93d3c121777bb31f", null ],
+    [ "commit_dut_dac", "group__periph.html#gac5d142df12ea0667d7fb5a01c0cdd2aa", null ],
+    [ "commit_dut_i2c", "group__periph.html#gaa42b2814169a924e83b923c08e4264fc", null ],
+    [ "commit_dut_pwm", "group__periph.html#ga9f4cb598fb399875210e1ad669579c62", null ],
+    [ "commit_dut_spi", "group__periph.html#gab91386c61d774ea6e5319ec3ccadc779", null ],
+    [ "commit_dut_uart", "group__periph.html#ga7401ae6c06e45a48a2593691c04d0db5", null ],
+    [ "commit_rtc", "group__periph.html#ga2e2b87e0e7aeec8cd279437da56ae2ec", null ],
+    [ "commit_sys", "group__periph.html#ga704758013d55ac6d925a40305d1771c0", null ],
+    [ "dut_cts_int", "group__periph.html#gaac9b4c517f15e376cbbe2f9c5afff111", null ],
+    [ "dut_nss_int", "group__periph.html#gaa9c18175d9950749e0aae8018ac60b1d", null ],
+    [ "flash_fw_version", "group__periph.html#ga1c8dd246276f62b799f1e4b4f59be594", null ],
+    [ "GPIO_DEBUG0_INT", "group__periph.html#gac57edf7529f87e22163d1c40a57ed164", null ],
+    [ "GPIO_DEBUG1_INT", "group__periph.html#ga0d50dd8e2715e4d827c27ddc19eec677", null ],
+    [ "GPIO_DEBUG2_INT", "group__periph.html#ga5d50a5e3e3ffe045078a5892a3652f98", null ],
+    [ "GPIO_NSS_CTS_INT", "group__periph.html#ga0f9beeef449d16595ef05bacbf72aa97", null ],
+    [ "init_dut_adc", "group__periph.html#gaeca9825e41ba2a34e3cbaf015268b71e", null ],
+    [ "init_dut_i2c", "group__periph.html#ga582c21d77655b08c07a3bb97d4aa63a3", null ],
+    [ "init_dut_pwm_dac", "group__periph.html#ga1a2d4b45c67c6e6d0048b7c16de0a7a2", null ],
+    [ "init_dut_spi", "group__periph.html#gaac2d3eeb52c98067120ed815ca2f8b51", null ],
+    [ "init_dut_uart", "group__periph.html#ga0a3e46dc5da43cb02c698e5fa15ea3a7", null ],
+    [ "init_gpio", "group__periph.html#ga5c2af9ab98c276604a71afcbc1f91369", null ],
+    [ "init_if_uart", "group__periph.html#ga784ca3d5891caa83f377d46bc0c3d85d", null ],
+    [ "init_rtc", "group__periph.html#ga976d8d6d20ecca799cbdf7517397bee5", null ],
+    [ "init_sys", "group__periph.html#gaf07943993990d083d94d2d6da6481ec7", null ],
+    [ "init_trace", "group__periph.html#ga44559658fc5c77a4efac047399b7de06", null ],
+    [ "init_wdt", "group__periph.html#ga174c83584890c3d61381cd5e3c8ff15f", null ],
+    [ "poll_dut_uart", "group__periph.html#ga443f63febebdec4f558ec83e1faecf20", null ],
+    [ "poll_if_uart", "group__periph.html#gaa17b4d6e0c4c307473298fac17af82b0", null ],
+    [ "reset_wdt", "group__periph.html#gab54bd4fe6e4b05590797c9a8f67776f9", null ],
+    [ "store_gpio_trace", "group__periph.html#ga995468f288c04fe4cda0fc2211c5e833", null ],
+    [ "update_debug_inputs", "group__periph.html#gace69db268efd48e63ccfff6d1b05b3ca", null ],
+    [ "update_dut_spi_inputs", "group__periph.html#gaee7e32a4ed755b381278f86275b90ea3", null ],
+    [ "update_rtc", "group__periph.html#ga65f595990a06a9c4c4301be4bc9511c0", null ],
+    [ "update_tick", "group__periph.html#gac0cba842642e0740e5e803b469814939", null ]
+];

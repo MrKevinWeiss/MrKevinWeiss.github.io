@@ -1,15 +1,12 @@
 var searchData=
 [
-  ['map_5ft_5faccess',['MAP_T_ACCESS',['../PHiLIP__access_8c.html#a6dc31e5bbdda46eda3c9dc5fc079ece5',1,'PHiLIP_access.c']]],
-  ['map_5ft_5farray_5fsize',['MAP_T_ARRAY_SIZE',['../group__PHiLIP__MMM.html#gade9553e5a81319acb5158a231d2876fd',1,'MAP_T_ARRAY_SIZE():&#160;PHiLIP_map.c'],['../group__PHiLIP__MMM.html#gade9553e5a81319acb5158a231d2876fd',1,'MAP_T_ARRAY_SIZE():&#160;PHiLIP_map.c']]],
-  ['map_5ft_5fbit_5foffset',['MAP_T_BIT_OFFSET',['../group__PHiLIP__MMM.html#ga7fa322869ec2470226fd246ff2556941',1,'MAP_T_BIT_OFFSET():&#160;PHiLIP_map.c'],['../group__PHiLIP__MMM.html#ga7fa322869ec2470226fd246ff2556941',1,'MAP_T_BIT_OFFSET():&#160;PHiLIP_map.c']]],
-  ['map_5ft_5fbits',['MAP_T_BITS',['../group__PHiLIP__MMM.html#ga3479f94443607aef3af56c1b76b39f1b',1,'MAP_T_BITS():&#160;PHiLIP_map.c'],['../group__PHiLIP__MMM.html#ga3479f94443607aef3af56c1b76b39f1b',1,'MAP_T_BITS():&#160;PHiLIP_map.c']]],
-  ['map_5ft_5fname',['MAP_T_NAME',['../group__PHiLIP__MMM.html#ga730219094a51e8f3bb946e7b4ced2c9a',1,'MAP_T_NAME():&#160;PHiLIP_map.c'],['../group__PHiLIP__MMM.html#ga730219094a51e8f3bb946e7b4ced2c9a',1,'MAP_T_NAME():&#160;PHiLIP_map.c']]],
-  ['map_5ft_5foffset',['MAP_T_OFFSET',['../group__PHiLIP__MMM.html#gabb50e7fb2aef781697dbdba5e891b6c9',1,'MAP_T_OFFSET():&#160;PHiLIP_map.c'],['../group__PHiLIP__MMM.html#gabb50e7fb2aef781697dbdba5e891b6c9',1,'MAP_T_OFFSET():&#160;PHiLIP_map.c']]],
-  ['map_5ft_5ftype',['MAP_T_TYPE',['../group__PHiLIP__MMM.html#ga908ecdde75a635eb9dd4bbef872171d1',1,'MAP_T_TYPE():&#160;PHiLIP_map.c'],['../group__PHiLIP__MMM.html#ga908ecdde75a635eb9dd4bbef872171d1',1,'MAP_T_TYPE():&#160;PHiLIP_map.c']]],
-  ['mask_5fmsb',['mask_msb',['../unionuart__t.html#a3fdeeab4747e3d9ed710d18b5de62658',1,'uart_t']]],
-  ['minute',['minute',['../uniontimestamp__t.html#a7d00afc68582d1585cfea58b334f1a05',1,'timestamp_t']]],
-  ['mode',['mode',['../unionsys__t.html#a87f76faecf8777a17ed03f4c6d39819c',1,'sys_t::mode()'],['../unioni2c__t.html#a60387a7b275f2125b32143f663ba24a2',1,'i2c_t::mode()'],['../unionspi__t.html#a4c328735a16f7b50b9fc5a674b46e873',1,'spi_t::mode()'],['../unionuart__t.html#a35b8d9167780903ca7b2247ed1f31a81',1,'uart_t::mode()']]],
-  ['modf',['modf',['../structspi__status__t.html#a2fcaf3debecf17b24ce0553e8270a945',1,'spi_status_t']]],
-  ['month',['month',['../uniontimestamp__t.html#aa60f18c9570931b2df258c39663730c9',1,'timestamp_t']]]
+  ['i2c',['i2c',['../unionmap__t.html#a5d7aefe40e05775aac2e02adcce66438',1,'map_t']]],
+  ['if_5fmode_5fint',['if_mode_int',['../structspi__dev.html#af8daf467a478d815d985ab085f13963e',1,'spi_dev']]],
+  ['if_5frev',['if_rev',['../unionsys__t.html#ac451a1ab7f91b49341b70c53a67c94b7',1,'sys_t']]],
+  ['if_5ftype',['if_type',['../structspi__mode__t.html#a72088a997f79a3c87af9825477f26114',1,'spi_mode_t::if_type()'],['../structuart__mode__t.html#a8da6de798a31e36ca39736e9947b0e27',1,'uart_mode_t::if_type()']]],
+  ['index',['index',['../unionadc__t.html#aabe3cbd02f8656cb82c716d70e3288a2',1,'adc_t::index()'],['../uniontrace__t.html#a01e966b9f5d7ac5451c3fc3b0fff3294',1,'trace_t::index()']]],
+  ['index_5ferr',['index_err',['../structspi__status__t.html#a88e933c88100ee4e93391aad2afcd44d',1,'spi_status_t']]],
+  ['init',['init',['../structsys__mode__t.html#ae6c832cf577e2c7993af3310530c3419',1,'sys_mode_t::init()'],['../structi2c__mode__t.html#a83678d429ea253efa2f1f433294769d8',1,'i2c_mode_t::init()'],['../structspi__mode__t.html#aec9ef20e732928c65a7f64303800946d',1,'spi_mode_t::init()'],['../structuart__mode__t.html#aa1ed49d778f47f23b3a9cf474ffaf880',1,'uart_mode_t::init()'],['../structgpio__mode__t.html#a20322bc42bf427ce2b98572c20adb879',1,'gpio_mode_t::init()'],['../structadc__mode__t.html#af4c7dc60ba44a4b730519cc4a71d3309',1,'adc_mode_t::init()'],['../structbasic__mode__t.html#a0ad44addfbefa8d7cf778ec596e0dfdf',1,'basic_mode_t::init()']]],
+  ['initial_5fbyte',['initial_byte',['../structspi__dev.html#affc3c4379fe6a3f563fb9a3aa265edd1',1,'spi_dev']]],
+  ['io_5ftype',['io_type',['../structgpio__mode__t.html#a3628dcfe9b4c2a72ac7f8ae4171218e3',1,'gpio_mode_t']]]
 ];

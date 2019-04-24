@@ -1,8 +1,27 @@
 var searchData=
 [
-  ['f_5fr_5fticks',['f_r_ticks',['../unioni2c__t.html#a48ae4389f09316ffa6fed5030e83340d',1,'i2c_t']]],
-  ['f_5fw_5fticks',['f_w_ticks',['../unioni2c__t.html#a1ec1b9b556b6e93935bd219590d6086a',1,'i2c_t']]],
-  ['fe',['fe',['../structuart__status__t.html#aaf2158e93a7e4cba634e8161d15db13b',1,'uart_status_t']]],
-  ['frame_5fticks',['frame_ticks',['../unionspi__t.html#af401a5f31d25711815961d4aa22eaf70',1,'spi_t']]],
-  ['fw_5frev',['fw_rev',['../unionsys__t.html#a1a1cb99d2fa6288fc39cdb252ba019f6',1,'sys_t']]]
+  ['gencall',['gencall',['../structi2c__status__t.html#a05827d4f312e96a2a90c962900978772',1,'i2c_status_t']]],
+  ['general_5fcall',['general_call',['../structi2c__mode__t.html#aa70447d2ecbe76226688807685a0ce41',1,'i2c_mode_t']]],
+  ['get_5fmm',['get_mm',['../group__Application.html#ga6f959fdaf8ce74c6e471545d7ff1ce26',1,'get_mm(uint16_t index, char *str):&#160;map_if.c'],['../group__Application.html#ga6f959fdaf8ce74c6e471545d7ff1ce26',1,'get_mm(uint16_t index, char *str):&#160;map_if.c']]],
+  ['get_5fmm_5fval',['get_mm_val',['../group__Application.html#gaa5c4a53cba4494f2dfebb5b2a9e82852',1,'get_mm_val(char *mm_name, uint32_t array_index, uint32_t *data):&#160;map_if.c'],['../group__Application.html#gaa5c4a53cba4494f2dfebb5b2a9e82852',1,'get_mm_val(char *mm_name, uint32_t array_index, uint32_t *data):&#160;map_if.c']]],
+  ['get_5freg_5fsize',['get_reg_size',['../group__Application.html#ga7e94ba51f78e24fb68d3bad9e39eaf4e',1,'get_reg_size():&#160;app_reg.c'],['../group__Application.html#ga7e94ba51f78e24fb68d3bad9e39eaf4e',1,'get_reg_size():&#160;app_reg.c']]],
+  ['get_5ftick',['get_tick',['../group__Application.html#gad0a74e5450dc27bf19b36b2907a2bd21',1,'get_tick():&#160;app_common.c'],['../group__Application.html#gad0a74e5450dc27bf19b36b2907a2bd21',1,'get_tick():&#160;app_common.c']]],
+  ['get_5ftick32',['get_tick32',['../group__Application.html#gaa56409b3e612e50a32cefdb999ea3201',1,'get_tick32():&#160;app_common.c'],['../group__Application.html#gaa56409b3e612e50a32cefdb999ea3201',1,'get_tick32():&#160;app_common.c']]],
+  ['get_5ftick32_5fdiv',['get_tick32_div',['../group__Application.html#ga1dab509e9efb3a0ec6fce390492724b1',1,'get_tick32_div(uint8_t div):&#160;app_common.c'],['../group__Application.html#ga1dab509e9efb3a0ec6fce390492724b1',1,'get_tick32_div(uint8_t div):&#160;app_common.c']]],
+  ['gpio',['gpio',['../unionmap__t.html#afa437e81bc15e701f35d103a65d78ced',1,'map_t']]],
+  ['gpio_2ec',['gpio.c',['../gpio_8c.html',1,'']]],
+  ['gpio_2eh',['gpio.h',['../gpio_8h.html',1,'']]],
+  ['gpio_5fdebug0_5fint',['GPIO_DEBUG0_INT',['../group__periph.html#gac57edf7529f87e22163d1c40a57ed164',1,'GPIO_DEBUG0_INT():&#160;gpio.c'],['../group__periph.html#gac57edf7529f87e22163d1c40a57ed164',1,'GPIO_DEBUG0_INT():&#160;gpio.c']]],
+  ['gpio_5fdebug1_5fint',['GPIO_DEBUG1_INT',['../group__periph.html#ga0d50dd8e2715e4d827c27ddc19eec677',1,'GPIO_DEBUG1_INT():&#160;gpio.c'],['../group__periph.html#ga0d50dd8e2715e4d827c27ddc19eec677',1,'GPIO_DEBUG1_INT():&#160;gpio.c']]],
+  ['gpio_5fdebug2_5fint',['GPIO_DEBUG2_INT',['../group__periph.html#ga5d50a5e3e3ffe045078a5892a3652f98',1,'GPIO_DEBUG2_INT():&#160;gpio.c'],['../group__periph.html#ga5d50a5e3e3ffe045078a5892a3652f98',1,'GPIO_DEBUG2_INT():&#160;gpio.c']]],
+  ['gpio_5fdev',['gpio_dev',['../structgpio__dev.html',1,'']]],
+  ['gpio_5fin',['GPIO_IN',['../group__periph.html#gga1f5d391cf7d36ccd2b153150e07eb513a3343e227f62c4c536efff81438a8e155',1,'gpio.c']]],
+  ['gpio_5finterrupt',['GPIO_INTERRUPT',['../group__periph.html#gga1f5d391cf7d36ccd2b153150e07eb513a57dc00fbf40422f0693727e00695ca6d',1,'gpio.c']]],
+  ['gpio_5fio_5ftype',['GPIO_IO_TYPE',['../group__periph.html#ga1f5d391cf7d36ccd2b153150e07eb513',1,'gpio.c']]],
+  ['gpio_5fmode_5ft',['gpio_mode_t',['../structgpio__mode__t.html',1,'']]],
+  ['gpio_5fnss_5fcts_5fint',['GPIO_NSS_CTS_INT',['../group__periph.html#ga0f9beeef449d16595ef05bacbf72aa97',1,'GPIO_NSS_CTS_INT():&#160;gpio.c'],['../group__periph.html#ga0f9beeef449d16595ef05bacbf72aa97',1,'GPIO_NSS_CTS_INT():&#160;gpio.c']]],
+  ['gpio_5fout_5fod',['GPIO_OUT_OD',['../group__periph.html#gga1f5d391cf7d36ccd2b153150e07eb513a001ee42b382da09d162d9e0fcce7e5b0',1,'gpio.c']]],
+  ['gpio_5fout_5fpp',['GPIO_OUT_PP',['../group__periph.html#gga1f5d391cf7d36ccd2b153150e07eb513a3033ccb6574d9c80913215d67058fc63',1,'gpio.c']]],
+  ['gpio_5fstatus_5ft',['gpio_status_t',['../structgpio__status__t.html',1,'']]],
+  ['gpio_5ft',['gpio_t',['../uniongpio__t.html',1,'']]]
 ];

@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['spi_5fdev',['spi_dev',['../structspi__dev.html',1,'']]],
-  ['spi_5fmode_5ft',['spi_mode_t',['../structspi__mode__t.html',1,'']]],
-  ['spi_5fstatus_5ft',['spi_status_t',['../structspi__status__t.html',1,'']]],
-  ['spi_5ft',['spi_t',['../unionspi__t.html',1,'']]],
-  ['sys_5fmode_5ft',['sys_mode_t',['../structsys__mode__t.html',1,'']]],
-  ['sys_5fstatus_5ft',['sys_status_t',['../structsys__status__t.html',1,'']]],
-  ['sys_5ft',['sys_t',['../unionsys__t.html',1,'']]]
+  ['i2c_5fdev',['i2c_dev',['../structi2c__dev.html',1,'']]],
+  ['i2c_5fmode_5ft',['i2c_mode_t',['../structi2c__mode__t.html',1,'']]],
+  ['i2c_5fstatus_5ft',['i2c_status_t',['../structi2c__status__t.html',1,'']]],
+  ['i2c_5ft',['i2c_t',['../unioni2c__t.html',1,'']]]
 ];

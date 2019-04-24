@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['i2c_5fstate',['I2C_STATE',['../group__periph.html#ga35f82c39bf28ecf0fa52c553ca7ab090',1,'i2c.c']]]
+  ['event_5fsources',['EVENT_SOURCES',['../group__periph.html#gabbe55dcdbec7403607e9b9b7e51a44b3',1,'trace.h']]],
+  ['event_5ftype',['EVENT_TYPE',['../group__periph.html#gaacea4a7e80c7ca11553910c740986045',1,'trace.h']]]
 ];

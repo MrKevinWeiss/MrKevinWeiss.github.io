@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['i2c',['i2c',['../unionmap__t.html#a5d7aefe40e05775aac2e02adcce66438',1,'map_t']]],
-  ['if_5fmode_5fint',['if_mode_int',['../structspi__dev.html#af8daf467a478d815d985ab085f13963e',1,'spi_dev']]],
-  ['if_5frev',['if_rev',['../unionsys__t.html#ac451a1ab7f91b49341b70c53a67c94b7',1,'sys_t']]],
-  ['if_5ftype',['if_type',['../structspi__mode__t.html#a72088a997f79a3c87af9825477f26114',1,'spi_mode_t::if_type()'],['../structuart__mode__t.html#a8da6de798a31e36ca39736e9947b0e27',1,'uart_mode_t::if_type()']]],
-  ['index_5ferr',['index_err',['../structspi__status__t.html#a88e933c88100ee4e93391aad2afcd44d',1,'spi_status_t']]],
-  ['init',['init',['../structsys__mode__t.html#ae6c832cf577e2c7993af3310530c3419',1,'sys_mode_t::init()'],['../structi2c__mode__t.html#a83678d429ea253efa2f1f433294769d8',1,'i2c_mode_t::init()'],['../structspi__mode__t.html#aec9ef20e732928c65a7f64303800946d',1,'spi_mode_t::init()'],['../structuart__mode__t.html#aa1ed49d778f47f23b3a9cf474ffaf880',1,'uart_mode_t::init()']]],
-  ['initial_5fbyte',['initial_byte',['../structspi__dev.html#affc3c4379fe6a3f563fb9a3aa265edd1',1,'spi_dev']]]
+  ['h_5fticks',['h_ticks',['../unionpwm__t.html#a83c27970de2150cd310a6f2bf89a78af',1,'pwm_t']]],
+  ['hdma_5fadc_5fpm',['hdma_adc_pm',['../stm32f1xx__it_8c.html#ad2bbfb40f99415d02a5b77ca3803bbe5',1,'port.c']]],
+  ['hgpio',['hgpio',['../structgpio__dev.html#a6e643d68ef237ec09e684ed30761e9e9',1,'gpio_dev']]],
+  ['hi2c',['hi2c',['../structi2c__dev.html#ad3c60b7b3199cc404eda6d3f50cdc9b6',1,'i2c_dev']]],
+  ['hoc',['hoc',['../structpwm__dev.html#af373d26942383ce4a077a377e6b20071',1,'pwm_dev::hoc()'],['../structdac__dev.html#acd613e5f4af6cc4aa56f75868f0a37e0',1,'dac_dev::hoc()']]],
+  ['hour',['hour',['../uniontimestamp__t.html#af8a83bb86e1e3c69de81da1b23102bfb',1,'timestamp_t::hour()'],['../unionrtc__t.html#ab3b2edf5633eb34fafd79918b68d44ba',1,'rtc_t::hour()']]],
+  ['hspi',['hspi',['../structspi__dev.html#a7e0d8b7955b7459ac827aa134929bcd3',1,'spi_dev']]],
+  ['htim_5fic',['htim_ic',['../stm32f1xx__it_8c.html#a166a42f22e99d73e9c109f356b85b791',1,'port.c']]],
+  ['htmr',['htmr',['../structpwm__dev.html#abb7c5cde37e29911034b8deb90f2ab25',1,'pwm_dev::htmr()'],['../structdac__dev.html#a3f1f94f21e54ca5b42d1094dbc234906',1,'dac_dev::htmr()']]],
+  ['huart',['huart',['../structuart__dev__t.html#a548aa52967672a423eb3ba9b3aee02a9',1,'uart_dev_t']]]
 ];

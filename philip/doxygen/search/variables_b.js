@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['parity',['parity',['../structuart__mode__t.html#ae0b6a6b9b140b45788ebf23a48a61253',1,'uart_mode_t']]],
-  ['pe',['pe',['../structuart__status__t.html#acfdb79e0654d53d544812d7fce0119ce',1,'uart_status_t']]],
-  ['philip_5ftype_5fname',['PHILIP_TYPE_NAME',['../group__PHiLIP__MMM.html#ga68360b5c072a94d06fe75f2bacff3a0f',1,'PHILIP_TYPE_NAME():&#160;PHiLIP_map.c'],['../group__PHiLIP__MMM.html#ga68360b5c072a94d06fe75f2bacff3a0f',1,'PHILIP_TYPE_NAME():&#160;PHiLIP_map.c']]],
-  ['philip_5ftype_5fsize',['PHILIP_TYPE_SIZE',['../group__PHiLIP__MMM.html#gafe8081180a0881266cbcf134301e39a6',1,'PHILIP_TYPE_SIZE():&#160;PHiLIP_map.c'],['../group__PHiLIP__MMM.html#gafe8081180a0881266cbcf134301e39a6',1,'PHILIP_TYPE_SIZE():&#160;PHiLIP_map.c']]]
+  ['nack_5fdata',['nack_data',['../structi2c__mode__t.html#a5bc08f44f380479a31d940a9e03142c7',1,'i2c_mode_t']]],
+  ['nf',['nf',['../structuart__status__t.html#a61ba9b9fb4268f6348940a9221c9f3e0',1,'uart_status_t']]],
+  ['no_5fclk_5fstretch',['no_clk_stretch',['../structi2c__mode__t.html#a10538ab0ebd6631c53a909a100e09759',1,'i2c_mode_t']]],
+  ['num_5fof_5fsamples',['num_of_samples',['../unionadc__t.html#a281044d4b561f0eb7baf1f8d9050bc8e',1,'adc_t']]]
 ];

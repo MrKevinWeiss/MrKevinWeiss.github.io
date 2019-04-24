@@ -1,15 +1,10 @@
 var searchData=
 [
-  ['uart_2eh',['uart.h',['../uart_8h.html',1,'']]],
-  ['uart_5fbuf_5fsize',['UART_BUF_SIZE',['../group__periph.html#gab0249d81dd53336b7810ebcf29511210',1,'uart.h']]],
-  ['uart_5fdev_5ft',['uart_dev_t',['../structuart__dev__t.html',1,'']]],
-  ['uart_5fmode_5ft',['uart_mode_t',['../structuart__mode__t.html',1,'']]],
-  ['uart_5fstatus_5ft',['uart_status_t',['../structuart__status__t.html',1,'']]],
-  ['uart_5ft',['uart_t',['../unionuart__t.html',1,'']]],
-  ['udr',['udr',['../structspi__status__t.html#a1f12442af57d0abee4199a55cc1f9dcd',1,'spi_status_t']]],
-  ['unprotected_5fread_5fuint8',['unprotected_read_uint8',['../group__Application.html#ga078aee30f5378a83155e1499797e3d57',1,'unprotected_read_uint8(uint32_t index, uint8_t *data):&#160;app_reg.c'],['../group__Application.html#ga078aee30f5378a83155e1499797e3d57',1,'unprotected_read_uint8(uint32_t index, uint8_t *data):&#160;app_reg.c']]],
-  ['update',['update',['../structsys__status__t.html#a52907611a5750e190e4ff0fcf5401c27',1,'sys_status_t']]],
-  ['usagefault_5fhandler',['UsageFault_Handler',['../stm32f1xx__it_8h.html#a1d98923de2ed6b7309b66f9ba2971647',1,'UsageFault_Handler(void):&#160;stm32f1xx_it.c'],['../stm32f1xx__it_8c.html#a1d98923de2ed6b7309b66f9ba2971647',1,'UsageFault_Handler(void):&#160;stm32f1xx_it.c']]],
-  ['use_5frtos',['USE_RTOS',['../stm32f1xx__hal__conf_8h.html#ad048ac737242c2c2cb9f4a72953d10ce',1,'stm32f1xx_hal_conf.h']]],
-  ['user_5freg',['user_reg',['../unionmap__t.html#af7e977bbf6859a2921de66d20e6485e7',1,'map_t']]]
+  ['value',['value',['../uniontrace__t.html#a9e66b4e9c508f3d179502093367afe21',1,'trace_t']]],
+  ['vdd_5fvalue',['VDD_VALUE',['../stm32f1xx__hal__conf_8h.html#aae550dad9f96d52cfce5e539adadbbb4',1,'stm32f1xx_hal_conf.h']]],
+  ['vect_5ftab_5foffset',['VECT_TAB_OFFSET',['../system__stm32f1xx_8c.html#a40e1495541cbb4acbe3f1819bd87a9fe',1,'system_stm32f1xx.c']]],
+  ['version_5fcmd',['VERSION_CMD',['../group__Application.html#ga200b35aa66e50dfd9dd220fdb36b1a2a',1,'app_shell_if.c']]],
+  ['version_5fcmd2',['VERSION_CMD2',['../group__Application.html#gaf91adb9fc19a04f62d4f2ba66afe2c6f',1,'app_shell_if.c']]],
+  ['version_5fcmd3',['VERSION_CMD3',['../group__Application.html#ga0308ad140cf1477c4a7d7d59a4dd9709',1,'app_shell_if.c']]],
+  ['version_5fcmd4',['VERSION_CMD4',['../group__Application.html#gab1168f55c3fc0e0662cdda5f3dad686a',1,'app_shell_if.c']]]
 ];
