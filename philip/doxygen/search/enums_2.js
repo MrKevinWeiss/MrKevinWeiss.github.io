@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gpio_5fio_5ftype',['GPIO_IO_TYPE',['../group__periph.html#ga1f5d391cf7d36ccd2b153150e07eb513',1,'gpio.c']]]
+  ['event_5fsources',['EVENT_SOURCES',['../group__periph.html#gabbe55dcdbec7403607e9b9b7e51a44b3',1,'trace.h']]],
+  ['event_5ftype',['EVENT_TYPE',['../group__periph.html#gaacea4a7e80c7ca11553910c740986045',1,'trace.h']]]
 ];

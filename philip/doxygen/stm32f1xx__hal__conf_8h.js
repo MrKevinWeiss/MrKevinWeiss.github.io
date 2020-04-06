@@ -16,7 +16,6 @@ var stm32f1xx__hal__conf_8h =
     [ "HAL_I2C_MODULE_ENABLED", "stm32f1xx__hal__conf_8h.html#a19999766418b0224871f732d800841c6", null ],
     [ "HAL_IWDG_MODULE_ENABLED", "stm32f1xx__hal__conf_8h.html#a7c8601480b3c54ae1398a58d416fd202", null ],
     [ "HAL_MODULE_ENABLED", "stm32f1xx__hal__conf_8h.html#a877ae99e8c47a609ea97c888912bf75f", null ],
-    [ "HAL_PCD_MODULE_ENABLED", "stm32f1xx__hal__conf_8h.html#abc68645a06297042bf1f4d9f5a59f94b", null ],
     [ "HAL_PWR_MODULE_ENABLED", "stm32f1xx__hal__conf_8h.html#ab51923c3716977d7923f49cc9d081aa8", null ],
     [ "HAL_RCC_MODULE_ENABLED", "stm32f1xx__hal__conf_8h.html#ac3dd74314ed62ac8575e2f9f48b3ac48", null ],
     [ "HAL_RTC_MODULE_ENABLED", "stm32f1xx__hal__conf_8h.html#a5b1d544516151cd8a18af91e3e1f336b", null ],

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['event_5fsources',['EVENT_SOURCES',['../group__periph.html#gabbe55dcdbec7403607e9b9b7e51a44b3',1,'trace.h']]],
-  ['event_5ftype',['EVENT_TYPE',['../group__periph.html#gaacea4a7e80c7ca11553910c740986045',1,'trace.h']]]
+  ['app_5fuart_5fdatabits',['APP_UART_DATABITS',['../group__periph.html#ga03ba0e67b8fa0593a862e35efb189612',1,'uart.c']]],
+  ['app_5fuart_5fparity',['APP_UART_PARITY',['../group__periph.html#gaa59ac20b5c213f4dfe90009022f698a3',1,'uart.c']]]
 ];

@@ -1,8 +1,9 @@
 var annotated_dup =
 [
-    [ "adc_dev", "structadc__dev.html", "structadc__dev" ],
+    [ "adc_dev_t", "structadc__dev__t.html", "structadc__dev__t" ],
     [ "adc_mode_t", "structadc__mode__t.html", "structadc__mode__t" ],
     [ "adc_t", "unionadc__t.html", "unionadc__t" ],
+    [ "basic_gpio_t", "structbasic__gpio__t.html", "structbasic__gpio__t" ],
     [ "basic_mode_t", "structbasic__mode__t.html", "structbasic__mode__t" ],
     [ "dac_dev", "structdac__dev.html", "structdac__dev" ],
     [ "dac_t", "uniondac__t.html", "uniondac__t" ],
@@ -26,6 +27,9 @@ var annotated_dup =
     [ "sys_status_t", "structsys__status__t.html", "structsys__status__t" ],
     [ "sys_t", "unionsys__t.html", "unionsys__t" ],
     [ "timestamp_t", "uniontimestamp__t.html", "uniontimestamp__t" ],
+    [ "tmr_dev_t", "structtmr__dev__t.html", "structtmr__dev__t" ],
+    [ "tmr_mode_t", "structtmr__mode__t.html", "structtmr__mode__t" ],
+    [ "tmr_t", "uniontmr__t.html", "uniontmr__t" ],
     [ "trace_t", "uniontrace__t.html", "uniontrace__t" ],
     [ "uart_dev_t", "structuart__dev__t.html", "structuart__dev__t" ],
     [ "uart_mode_t", "structuart__mode__t.html", "structuart__mode__t" ],

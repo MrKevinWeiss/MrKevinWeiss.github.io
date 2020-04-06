@@ -7,10 +7,10 @@ var gpio_8c =
       [ "GPIO_INTERRUPT", "group__periph.html#gga1f5d391cf7d36ccd2b153150e07eb513a57dc00fbf40422f0693727e00695ca6d", null ]
     ] ],
     [ "commit_debug", "group__periph.html#ga8e310c9548b13a5041bd48c40212aea2", null ],
-    [ "GPIO_DEBUG0_INT", "group__periph.html#gac57edf7529f87e22163d1c40a57ed164", null ],
-    [ "GPIO_DEBUG1_INT", "group__periph.html#ga0d50dd8e2715e4d827c27ddc19eec677", null ],
-    [ "GPIO_DEBUG2_INT", "group__periph.html#ga5d50a5e3e3ffe045078a5892a3652f98", null ],
-    [ "GPIO_NSS_CTS_INT", "group__periph.html#ga0f9beeef449d16595ef05bacbf72aa97", null ],
-    [ "init_gpio", "group__periph.html#ga5c2af9ab98c276604a71afcbc1f91369", null ],
+    [ "GPIO_DEBUG0_INT", "gpio_8c.html#ac57edf7529f87e22163d1c40a57ed164", null ],
+    [ "GPIO_DEBUG1_INT", "gpio_8c.html#a0d50dd8e2715e4d827c27ddc19eec677", null ],
+    [ "GPIO_DEBUG2_INT", "gpio_8c.html#a5d50a5e3e3ffe045078a5892a3652f98", null ],
+    [ "init_basic_gpio", "group__periph.html#gaa88df1b44b3787d1fa35327f0cc5cb5a", null ],
+    [ "init_gpio", "group__periph.html#ga72d187250f2a691d47a83c87cb4cd01f", null ],
     [ "update_debug_inputs", "group__periph.html#gace69db268efd48e63ccfff6d1b05b3ca", null ]
 ];

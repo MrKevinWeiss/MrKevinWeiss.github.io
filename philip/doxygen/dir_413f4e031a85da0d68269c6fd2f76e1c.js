@@ -15,6 +15,8 @@ var dir_413f4e031a85da0d68269c6fd2f76e1c =
     [ "stm32f1xx_it.c", "stm32f1xx__it_8c.html", "stm32f1xx__it_8c" ],
     [ "sys.c", "sys_8c.html", "sys_8c" ],
     [ "system_stm32f1xx.c", "system__stm32f1xx_8c.html", "system__stm32f1xx_8c" ],
+    [ "tmr.c", "tmr_8c.html", "tmr_8c" ],
     [ "trace.c", "trace_8c.html", "trace_8c" ],
+    [ "uart.c", "uart_8c.html", "uart_8c" ],
     [ "wdt.c", "wdt_8c.html", "wdt_8c" ]
 ];

@@ -7,5 +7,6 @@ var PHiLIP__defaults_8h =
     [ "DEFAULT_PWM_H_TICKS", "group__PHiLIP__MMM.html#ga00ddaa3c294ac3e589f030b667cd97bb", null ],
     [ "DEFAULT_PWM_L_TICKS", "group__PHiLIP__MMM.html#gae60673e931c948f3fd500dcc6a754916", null ],
     [ "DEFAULT_SYS_DEVICE_NUM", "group__PHiLIP__MMM.html#ga58691fcd6b3168506bb404d3802c26c6", null ],
+    [ "DEFAULT_TMR_MIN_TICK", "group__PHiLIP__MMM.html#gaec8698ba47ac3ddacab25f69809148c5", null ],
     [ "init_defaults_map_t", "group__PHiLIP__MMM.html#ga049361d6c2b18711ff80759fc0902119", null ]
 ];

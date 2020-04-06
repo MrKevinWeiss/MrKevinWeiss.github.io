@@ -13,7 +13,10 @@ var i2c_8c =
       [ "I2C_STOPPED", "group__periph.html#gga35f82c39bf28ecf0fa52c553ca7ab090ad409b2a8c23c44f122c618aea918bed6", null ]
     ] ],
     [ "commit_dut_i2c", "group__periph.html#gaa42b2814169a924e83b923c08e4264fc", null ],
+    [ "deinit_dut_i2c_msp", "group__periph.html#ga5999ac57df9639aa6c5d9ce1b8cf67b3", null ],
     [ "DUT_I2C_ERR_INT", "i2c_8c.html#a9a47f551ccd67fbb9d9d71ffa69614d2", null ],
     [ "DUT_I2C_EV_INT", "i2c_8c.html#ad1ff6c295d29f6274333bef4b019a343", null ],
-    [ "init_dut_i2c", "group__periph.html#ga582c21d77655b08c07a3bb97d4aa63a3", null ]
+    [ "init_dut_i2c", "group__periph.html#gad9684a7af7cfb531661d613e7c1208aa", null ],
+    [ "init_dut_i2c_msp", "group__periph.html#ga2f3bb07ad19107767a2ec419f18851c5", null ],
+    [ "update_dut_i2c_inputs", "group__periph.html#ga6203252d50f5d188a016c11835a0f39d", null ]
 ];

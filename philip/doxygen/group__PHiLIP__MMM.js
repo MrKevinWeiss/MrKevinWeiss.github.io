@@ -8,10 +8,12 @@ var group__PHiLIP__MMM =
     [ "PHiLIP_typedef.h", "PHiLIP__typedef_8h.html", null ],
     [ "sys_mode_t", "structsys__mode__t.html", [
       [ "dut_rst", "structsys__mode__t.html#a023e64f4924840ea97befc94017411ba", null ],
-      [ "init", "structsys__mode__t.html#ae6c832cf577e2c7993af3310530c3419", null ]
+      [ "init", "structsys__mode__t.html#ae6c832cf577e2c7993af3310530c3419", null ],
+      [ "res", "structsys__mode__t.html#a46a62ad9880bd1f77050a8b563f6a20f", null ]
     ] ],
     [ "sys_status_t", "structsys__status__t.html", [
       [ "board", "structsys__status__t.html#a5eab642f0cadbb6ab68101b60fb59d71", null ],
+      [ "res", "structsys__status__t.html#a99ef6c3e1abbc472f3167d94def85bc4", null ],
       [ "update", "structsys__status__t.html#a52907611a5750e190e4ff0fcf5401c27", null ]
     ] ],
     [ "i2c_mode_t", "structi2c__mode__t.html", [
@@ -30,6 +32,7 @@ var group__PHiLIP__MMM =
       [ "busy", "structi2c__status__t.html#ade76b0897c6cf1ae9b058d4c691f784c", null ],
       [ "gencall", "structi2c__status__t.html#a05827d4f312e96a2a90c962900978772", null ],
       [ "ovr", "structi2c__status__t.html#aaf47df38aca7a54385a084195b6deee8", null ],
+      [ "res", "structi2c__status__t.html#ac665aa71ddf7be96959e8eb9b8f0a041", null ],
       [ "rsr", "structi2c__status__t.html#a72eb0b9070fd6e22b241720444ae2cf4", null ]
     ] ],
     [ "spi_mode_t", "structspi__mode__t.html", [
@@ -57,6 +60,7 @@ var group__PHiLIP__MMM =
       [ "if_type", "structuart__mode__t.html#a8da6de798a31e36ca39736e9947b0e27", null ],
       [ "init", "structuart__mode__t.html#aa1ed49d778f47f23b3a9cf474ffaf880", null ],
       [ "parity", "structuart__mode__t.html#ae0b6a6b9b140b45788ebf23a48a61253", null ],
+      [ "res", "structuart__mode__t.html#a1a3ce18e731b81f72e842d961177c91c", null ],
       [ "rts", "structuart__mode__t.html#aec96c0b5a7fba460a11ffe95db3e283b", null ],
       [ "stop_bits", "structuart__mode__t.html#aa0f272d8ac08ccd0a81b452f78dbb131", null ]
     ] ],
@@ -65,26 +69,44 @@ var group__PHiLIP__MMM =
       [ "fe", "structuart__status__t.html#aaf2158e93a7e4cba634e8161d15db13b", null ],
       [ "nf", "structuart__status__t.html#a61ba9b9fb4268f6348940a9221c9f3e0", null ],
       [ "ore", "structuart__status__t.html#ac5de2b5cbcee90df830f69c325dc69e7", null ],
-      [ "pe", "structuart__status__t.html#acfdb79e0654d53d544812d7fce0119ce", null ]
+      [ "pe", "structuart__status__t.html#acfdb79e0654d53d544812d7fce0119ce", null ],
+      [ "res", "structuart__status__t.html#a8b40cbd76457d0eefd6ed3ed1e746f9b", null ]
     ] ],
     [ "gpio_mode_t", "structgpio__mode__t.html", [
       [ "init", "structgpio__mode__t.html#a20322bc42bf427ce2b98572c20adb879", null ],
       [ "io_type", "structgpio__mode__t.html#a3628dcfe9b4c2a72ac7f8ae4171218e3", null ],
       [ "level", "structgpio__mode__t.html#acddb21a84731e1f1b053e2af80543bba", null ],
       [ "pull", "structgpio__mode__t.html#a7bf983d7306368bfe829a0d0c216a2a8", null ],
+      [ "res", "structgpio__mode__t.html#afecf83edd46c22cf716a5bf023fa8528", null ],
       [ "tick_div", "structgpio__mode__t.html#a35423c2c0d9bb928dc670ef454a9ec1e", null ]
     ] ],
+    [ "basic_gpio_t", "structbasic__gpio__t.html", [
+      [ "io_type", "structbasic__gpio__t.html#acf1a959dbe12a20f3c7eb1fd4ef8d944", null ],
+      [ "level", "structbasic__gpio__t.html#acad7334870c19f4bdd2df6b932d6c85b", null ],
+      [ "pull", "structbasic__gpio__t.html#a6a32e76dcca530646fb9682c0ef73eb6", null ],
+      [ "res", "structbasic__gpio__t.html#aa8052f40b763378c434ac1e37c34d79b", null ],
+      [ "set_level", "structbasic__gpio__t.html#a7f72bc2e4fe45b93341b0f08b05667b6", null ]
+    ] ],
     [ "gpio_status_t", "structgpio__status__t.html", [
-      [ "level", "structgpio__status__t.html#a29185f8f55e6d70082e444cd4ef92fe3", null ]
+      [ "level", "structgpio__status__t.html#a29185f8f55e6d70082e444cd4ef92fe3", null ],
+      [ "res", "structgpio__status__t.html#ab3d26572fd80bea95b3ff20eab5a6e7e", null ]
     ] ],
     [ "adc_mode_t", "structadc__mode__t.html", [
-      [ "enable", "structadc__mode__t.html#a9b0d61ed1e417a58722d79028f3b559f", null ],
+      [ "disable", "structadc__mode__t.html#aecc07d05dfbc801b8dcd66be1922b0ff", null ],
       [ "fast_sample", "structadc__mode__t.html#a57b277762bd97fa3b8c22bbf9228d6fe", null ],
-      [ "init", "structadc__mode__t.html#af4c7dc60ba44a4b730519cc4a71d3309", null ]
+      [ "init", "structadc__mode__t.html#af4c7dc60ba44a4b730519cc4a71d3309", null ],
+      [ "res", "structadc__mode__t.html#a608f78caadc2688d2cfa10ce162609c1", null ]
+    ] ],
+    [ "tmr_mode_t", "structtmr__mode__t.html", [
+      [ "disable", "structtmr__mode__t.html#ae2bc5ea5790fcade1086e8f30196878b", null ],
+      [ "init", "structtmr__mode__t.html#adfd4d0cc9e36e4f6fc4f86aa89fcf172", null ],
+      [ "res", "structtmr__mode__t.html#a4a635f6e473740e89a43fef9ca96332d", null ],
+      [ "trig_edge", "structtmr__mode__t.html#a52c4a38ff0490525708d66550e7d03aa", null ]
     ] ],
     [ "basic_mode_t", "structbasic__mode__t.html", [
       [ "disable", "structbasic__mode__t.html#a33bb99791fbaa9b1572d4cbdbc0728a0", null ],
-      [ "init", "structbasic__mode__t.html#a0ad44addfbefa8d7cf778ec596e0dfdf", null ]
+      [ "init", "structbasic__mode__t.html#a0ad44addfbefa8d7cf778ec596e0dfdf", null ],
+      [ "res", "structbasic__mode__t.html#ae65cc4f178e0152940cb72f50a16d7cd", null ]
     ] ],
     [ "timestamp_t", "uniontimestamp__t.html", [
       [ "data8", "uniontimestamp__t.html#afd39bacef057214bf94b6bcb17ec1a4c", null ],
@@ -113,13 +135,15 @@ var group__PHiLIP__MMM =
     [ "i2c_t", "unioni2c__t.html", [
       [ "clk_stretch_delay", "unioni2c__t.html#ab300dcb1990fa938fd2d8ff9f50f6028", null ],
       [ "data8", "unioni2c__t.html#abe1f7c30de1428242d59a6f6776f4fc2", null ],
+      [ "dut_scl", "unioni2c__t.html#af94673ffb1a92f2733ff3244b8ffea46", null ],
+      [ "dut_sda", "unioni2c__t.html#aa8b1f8fabed966b92d5b729deeb8ae7c", null ],
       [ "f_r_ticks", "unioni2c__t.html#a48ae4389f09316ffa6fed5030e83340d", null ],
       [ "f_w_ticks", "unioni2c__t.html#a1ec1b9b556b6e93935bd219590d6086a", null ],
       [ "mode", "unioni2c__t.html#a60387a7b275f2125b32143f663ba24a2", null ],
       [ "r_count", "unioni2c__t.html#adb6b91f0699ad443ba047f56686ec591", null ],
       [ "r_ticks", "unioni2c__t.html#aa49231f71b95fbff8c4eccfa34fea734", null ],
       [ "reg_index", "unioni2c__t.html#a79aa048e98c8ddf28024cf1002760f88", null ],
-      [ "res", "unioni2c__t.html#a5af4a0763c790335e77afb1343f0d9df", null ],
+      [ "res", "unioni2c__t.html#a65243067f747210560db818fc9b9008f", null ],
       [ "s_ticks", "unioni2c__t.html#ae3eac1c6d967e5bd29faf68669c6d2e5", null ],
       [ "slave_addr_1", "unioni2c__t.html#a89a375fdaba028f2c9e14e463f8b48ec", null ],
       [ "slave_addr_2", "unioni2c__t.html#afd1aa5aa68d8ecd0d8fc71edac3ebdc1", null ],
@@ -132,12 +156,16 @@ var group__PHiLIP__MMM =
     [ "spi_t", "unionspi__t.html", [
       [ "byte_ticks", "unionspi__t.html#acb6194b7bf200b9ffd104fca54ddab5d", null ],
       [ "data8", "unionspi__t.html#a83f099decc73b56f6c39495343b74c6d", null ],
+      [ "dut_miso", "unionspi__t.html#a735a3dd669c59db4c2d2fbcd275c1100", null ],
+      [ "dut_mosi", "unionspi__t.html#a5e7beb9aacdfb95369136cad34d46be2", null ],
+      [ "dut_nss", "unionspi__t.html#ae9808dd048e0f983da9f725ae840f58e", null ],
+      [ "dut_sck", "unionspi__t.html#ab1126afa1f022a56707622ac27541c57", null ],
       [ "frame_ticks", "unionspi__t.html#af401a5f31d25711815961d4aa22eaf70", null ],
       [ "mode", "unionspi__t.html#a4c328735a16f7b50b9fc5a674b46e873", null ],
       [ "prev_ticks", "unionspi__t.html#abac4f60d8044206e9de1b77884d63073", null ],
       [ "r_count", "unionspi__t.html#abd391f662ce7afab5122177cca78292d", null ],
       [ "reg_index", "unionspi__t.html#a66094b129ac0cc3cae110b6a79a6a660", null ],
-      [ "res", "unionspi__t.html#ae9d9da9b41eccc46590f1eaaca5039da", null ],
+      [ "res", "unionspi__t.html#a701548bf31fca5963854675e30248c21", null ],
       [ "start_reg_index", "unionspi__t.html#a6ffb1ada4041e5ee390b93467d959820", null ],
       [ "state", "unionspi__t.html#a03925422d3acf195ea304692787195e8", null ],
       [ "status", "unionspi__t.html#a0635068fe619e6ed47d5750a4d377899", null ],
@@ -147,9 +175,12 @@ var group__PHiLIP__MMM =
     [ "uart_t", "unionuart__t.html", [
       [ "baud", "unionuart__t.html#ac291722d0e8d037493f3c20107eaea7c", null ],
       [ "data8", "unionuart__t.html#a94961807412fe4e0186994e4c22f7279", null ],
+      [ "dut_cts", "unionuart__t.html#aeb9fbec4773e601f6b129ab09f723efe", null ],
+      [ "dut_rts", "unionuart__t.html#afca0cda1843e15844d18d244bebe2c50", null ],
+      [ "dut_rx", "unionuart__t.html#a08bae4d308d5a4884cafeec6ece898ea", null ],
+      [ "dut_tx", "unionuart__t.html#a2601417549c4be51e6fec90e1eb61b85", null ],
       [ "mask_msb", "unionuart__t.html#a3fdeeab4747e3d9ed710d18b5de62658", null ],
       [ "mode", "unionuart__t.html#a35b8d9167780903ca7b2247ed1f31a81", null ],
-      [ "res", "unionuart__t.html#ac7d3c1c824ddc7f0d547d734da2d2b12", null ],
       [ "rx_count", "unionuart__t.html#abd9786a4aad7211e5f11a073c38b2f21", null ],
       [ "status", "unionuart__t.html#ac51daa92116c5bf50c27e9bf1a3b120d", null ],
       [ "tx_count", "unionuart__t.html#a8987bd49aa77ab856b117a249ba2bbc8", null ]
@@ -158,29 +189,38 @@ var group__PHiLIP__MMM =
       [ "counter", "unionadc__t.html#a1429365960d443848495682ca489b1c8", null ],
       [ "current_sum", "unionadc__t.html#ac7dfcc780354b7ceb49b23dd0e321268", null ],
       [ "data8", "unionadc__t.html#a0546d37ed5d6f70d5dd95bf2c5234d1b", null ],
+      [ "dut_adc", "unionadc__t.html#aa808ed94d674ea93604d30287c24a3a1", null ],
       [ "index", "unionadc__t.html#aabe3cbd02f8656cb82c716d70e3288a2", null ],
       [ "mode", "unionadc__t.html#abf360c2ebd70e0ca72f7c37a2e9e1c1d", null ],
       [ "num_of_samples", "unionadc__t.html#a281044d4b561f0eb7baf1f8d9050bc8e", null ],
-      [ "res", "unionadc__t.html#ae3c129dbe7ca3ca22805b1c78ca39e7f", null ],
+      [ "res", "unionadc__t.html#a6c72859e72766026a028aa31cf8452fc", null ],
       [ "sample", "unionadc__t.html#a2f80115081a04e2b49c67287aa36e5bb", null ],
       [ "sum", "unionadc__t.html#a761b0ae5bbcb4a9dcb213660387b8209", null ]
     ] ],
     [ "pwm_t", "unionpwm__t.html", [
       [ "data8", "unionpwm__t.html#af401450a34056749c44b01e5cc78e543", null ],
+      [ "dut_pwm", "unionpwm__t.html#a0ab4bf853f40aabdc22b199fd89c6d8c", null ],
       [ "duty_cycle", "unionpwm__t.html#a5c848a0249e52196d5fb7c11a2b39b9b", null ],
       [ "h_ticks", "unionpwm__t.html#a83c27970de2150cd310a6f2bf89a78af", null ],
       [ "l_ticks", "unionpwm__t.html#af850a6bcaa568971f5af4df6872b4ed5", null ],
       [ "mode", "unionpwm__t.html#a63dfd49b0ed58ef2f0bc0c335cb2b81b", null ],
       [ "period", "unionpwm__t.html#aaa1b66236961190fbfc57d55012439ee", null ],
-      [ "res", "unionpwm__t.html#abb2a77ba4170a6c8e033d3c583fc0e10", null ],
-      [ "status", "unionpwm__t.html#a347953b8e1aa37d791815b3f42eb631e", null ]
+      [ "res", "unionpwm__t.html#abb2a77ba4170a6c8e033d3c583fc0e10", null ]
     ] ],
     [ "dac_t", "uniondac__t.html", [
       [ "data8", "uniondac__t.html#a3e5439630c736697e41b96a6a6869629", null ],
+      [ "dut_dac", "uniondac__t.html#a14285ab8f02b1083c80e937347d45762", null ],
       [ "level", "uniondac__t.html#ae88b4d9ffcbbf3a1a5eb8a3421e2c52e", null ],
       [ "mode", "uniondac__t.html#a35f4a1470834b603b1be11023cba4de9", null ],
-      [ "res", "uniondac__t.html#a6e52e778d9c16a55650c7eff4b75a383", null ],
-      [ "status", "uniondac__t.html#ae16fae0dcc0a2bfa8fafcfa00c285416", null ]
+      [ "res", "uniondac__t.html#a6e52e778d9c16a55650c7eff4b75a383", null ]
+    ] ],
+    [ "tmr_t", "uniontmr__t.html", [
+      [ "data8", "uniontmr__t.html#a6700fae832491cfa73bf5cc113d3a44c", null ],
+      [ "dut_ic", "uniontmr__t.html#a45dd39c98a7546c347b72fab9265b2ff", null ],
+      [ "max_tick", "uniontmr__t.html#a87328e94585d1f01287927676cbc191b", null ],
+      [ "min_holdoff", "uniontmr__t.html#a4ee5632c666ee7169b0ca9049247db9e", null ],
+      [ "min_tick", "uniontmr__t.html#a2a2c6b702eb6c69f0614e8bb3ce1a17b", null ],
+      [ "mode", "uniontmr__t.html#a7b73c13468d68fe12a5410a378e1f7f4", null ]
     ] ],
     [ "rtc_t", "unionrtc__t.html", [
       [ "data8", "unionrtc__t.html#a199022098b4f7e0127da9f89749a5573", null ],
@@ -202,24 +242,25 @@ var group__PHiLIP__MMM =
       [ "status", "uniongpio__t.html#aef3d11ebdc6bd521be7d7e0de6171399", null ]
     ] ],
     [ "trace_t", "uniontrace__t.html", [
-      [ "data8", "uniontrace__t.html#abe2444b9a6430836da2d8a008e4201c0", null ],
+      [ "data8", "uniontrace__t.html#ae872a35494cb917b4440e391c92fad85", null ],
       [ "index", "uniontrace__t.html#a01e966b9f5d7ac5451c3fc3b0fff3294", null ],
-      [ "source", "uniontrace__t.html#a55ed6f76f3d302ae69598a9e4c12bb63", null ],
-      [ "tick", "uniontrace__t.html#a39eb55de0440aa0cb036ea2b1567c575", null ],
-      [ "tick_div", "uniontrace__t.html#a68e0b6e588a30dbe6a105be66e699465", null ],
-      [ "value", "uniontrace__t.html#a9e66b4e9c508f3d179502093367afe21", null ]
+      [ "source", "uniontrace__t.html#a899212c9310328a8e813d81208f445f0", null ],
+      [ "tick", "uniontrace__t.html#a0dc538935bbcf23474f3c9acae293cd6", null ],
+      [ "tick_div", "uniontrace__t.html#a0157177300283e5a25b85b2a1ae1a2a2", null ],
+      [ "value", "uniontrace__t.html#a382531db54a57ebdb26c5e0dacfa8155", null ]
     ] ],
     [ "map_t", "unionmap__t.html", [
       [ "adc", "unionmap__t.html#a4208bed2e6a938a7d335093636ac8016", null ],
       [ "dac", "unionmap__t.html#aa4b8134557e38e913a13d0e31dd849c5", null ],
-      [ "data8", "unionmap__t.html#a07ab3181bb367a2d2d8c5941a031ff0e", null ],
+      [ "data8", "unionmap__t.html#a9aa3023c3bcce638a778eca9657c3f02", null ],
       [ "gpio", "unionmap__t.html#afa437e81bc15e701f35d103a65d78ced", null ],
       [ "i2c", "unionmap__t.html#a5d7aefe40e05775aac2e02adcce66438", null ],
       [ "pwm", "unionmap__t.html#af453b2d45459bf28f2afaeacba6d230f", null ],
-      [ "res", "unionmap__t.html#a214863a8946d58fa97c8d32b7e8ba18d", null ],
+      [ "res", "unionmap__t.html#a2e2adcfd95aaa2c3aea69aefdbebd5b3", null ],
       [ "rtc", "unionmap__t.html#a2aec4678fc11f4e37534d74da29017ee", null ],
       [ "spi", "unionmap__t.html#ab483e3444dc971ce77dacbaa5bdc8009", null ],
       [ "sys", "unionmap__t.html#ac9f3a907dc0cbcedfdc3f6ddd946c5ff", null ],
+      [ "tmr", "unionmap__t.html#a7788d454625dff8ac7abd8742c18c304", null ],
       [ "trace", "unionmap__t.html#a6af8719054134d2e5339207a746b1af9", null ],
       [ "uart", "unionmap__t.html#ad822500563fa8ff5dd50f04566367ff2", null ],
       [ "user_reg", "unionmap__t.html#af7e977bbf6859a2921de66d20e6485e7", null ]
@@ -231,6 +272,7 @@ var group__PHiLIP__MMM =
     [ "DEFAULT_PWM_H_TICKS", "group__PHiLIP__MMM.html#ga00ddaa3c294ac3e589f030b667cd97bb", null ],
     [ "DEFAULT_PWM_L_TICKS", "group__PHiLIP__MMM.html#gae60673e931c948f3fd500dcc6a754916", null ],
     [ "DEFAULT_SYS_DEVICE_NUM", "group__PHiLIP__MMM.html#ga58691fcd6b3168506bb404d3802c26c6", null ],
+    [ "DEFAULT_TMR_MIN_TICK", "group__PHiLIP__MMM.html#gaec8698ba47ac3ddacab25f69809148c5", null ],
     [ "IF_VERSION_MAJOR", "group__PHiLIP__MMM.html#gae78c5a27a858ed07bdd6e09c8a0b3ac9", null ],
     [ "IF_VERSION_MINOR", "group__PHiLIP__MMM.html#ga13a1d6b5828b3db6518af0e78c63f7f8", null ],
     [ "IF_VERSION_PATCH", "group__PHiLIP__MMM.html#gad4a055de49bc79ef894843bdf085cc2d", null ],
